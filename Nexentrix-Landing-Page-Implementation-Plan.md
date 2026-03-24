@@ -1,75 +1,131 @@
 # Nexentrix Landing Page - Implementation Plan
 
-## Tech Setup
-1. `npx create-react-app nexentrix` (or `npx create-next-app`)
-2. Install dependencies:
-   - `npm install -D tailwindcss postcss autoprefixer`
-   - `npm install framer-motion`
-   - `npm install react-hook-form` (forms)
-3. Initialize Tailwind: `npx tailwindcss init -p`
-4. Add base colors+fonts in `tailwind.config.js`.
+This repository is a multi-page, section-based website. The goal is to keep features isolated, easy to review, and clear for PR names by page and section.
 
-## Page Layout and Components
-1. `src/components/Hero.jsx`
-   - headline, subheadline, CTA buttons, background effect
-   - use `framer-motion` fade-in + parallax overlay
+## PR naming guideline (example)
+- `feat/homepage-hero-and-cta`
+- `feat/about-page-values-section`
+- `feat/products-page-card-grid`
+- `fix/shared-navbar-mobile-spacing`
+- `chore/tailwind-colors-update`
 
-2. `src/components/About.jsx`
-   - 2-3 paragraphs, mission + vision cards
-   - simple responsive grid
+> PR title should include the page + section/module.
 
-3. `src/components/Divisions.jsx`
-   - 4 cards array mapped
-   - includes icon, title, description
+## Project pages structure
+- `/` (Home)
+- `/about`
+- `/products`
+- `/academy`
+- `/contact`
 
-4. `src/components/Products.jsx`
-   - 3 project tiles with `Learn More` link
-   - optional modal for details
+Each page is split into discrete sections for easier work and PR scope.
 
-5. `src/components/WhyChooseUs.jsx`
-   - bullet list with icons
-   - use `motion.ul` stagger plugin
+## Shared layout
+- `src/layouts/MainLayout.tsx`
+- `src/components/Navbar.tsx`
+- `src/components/Footer.tsx`
+- `src/components/ScrollToTop.tsx`
 
-6. `src/components/AcademyHighlight.jsx`
-   - content block + CTA
-   - optional testimonial slider
+### Main shared tasks
+1. Responsive navbar with mobile menu.
+2. Global typography + container / max width.
+3. Theme colors (tailwind configuration). 
+4. Site metadata and SEO utilities.
 
-7. `src/components/CallToAction.jsx`
-   - bold CTA headline + 3 buttons
+## Home page (`/`)
+1. `src/pages/Home.tsx`
+2. Sections:
+   - `HeroSection` (headline/subheadline, primary CTA, bg image/gradient)
+   - `AboutPeek` (short text + values icons)
+   - `Divisions` (4 cards with icons)
+   - `WhyChooseUs` (text list + metrics)
+   - `LeadCapture` (email form, privacy note)
+   - `FeaturedProducts` (3 product tiles w/ CTA)
 
-8. `src/components/Footer.jsx`
-   - contact, socials, nav links
+PR examples:
+- `feat/home-hero-section`
+- `feat/home-featured-products`
+- `feat/home-lead-capture-form`
 
-9. `src/components/LeadCaptureForm.jsx`
-   - email input, submit button
-   - `react-hook-form` validation
-   - submits to API route (or sheet)
+## About page (`/about`)
+1. `src/pages/About.tsx`
+2. Sections:
+   - `MissionVision` cards
+   - `TeamOverview` (grid of leader cards)
+   - `Timeline` (company story)
+   - `CoreValues` (icons + text)
 
-## Responsive & Animation
-1. Mobile-first CSS with Tailwind breakpoints (`sm`, `md`, `lg`, `xl`).
-2. Use `framer-motion` for reveal effects and hover animations.
-3. Sticky top nav (if included) + smooth scroll `scroll-behavior: smooth` in CSS.
+PR examples:
+- `feat/about-mission-vision`
+- `feat/about-team-section`
 
-## Functional Requirements
-1. Ensure all sections are within WordPress semantics (`<header>`, `<main>`, `<section>`, `<footer>`).
-2. Add `aria-label` on CTA buttons and forms.
-3. Add loading performance checks (Lighthouse).
-4. Embed email capture endpoint (e.g., Zapier, Supabase, Netlify forms).
+## Products page (`/products`)
+1. `src/pages/Products.tsx`
+2. Sections:
+   - `ProductGrid` (cards with image, summary, `Learn More`)
+   - `ProductDetailModal` (optional modal)
+   - `Comparison` (feature table)
 
-## Metrics & Analytics
-1. Add Google Analytics or Plausible snippet.
-2. Track:
-   - CTA click events
-   - form submissions
-   - scroll depth
+PR examples:
+- `feat/products-grid`
+- `feat/products-detail-modal`
+
+## Academy page (`/academy`)
+1. `src/pages/Academy.tsx`
+2. Sections:
+   - `CoursesList` (cards, filter by category)
+   - `Testimonials` (slider)
+   - `CTAJoin` (join now button)
+
+PR example:
+- `feat/academy-courses-and-testimonials`
+
+## Contact page (`/contact`)
+1. `src/pages/Contact.tsx`
+2. Sections:
+   - `ContactForm` (name/email/message, client validation)
+   - `OfficeDetails` (map + address + socials)
+   - `Newsletter` (email signup)
+
+PR example:
+- `feat/contact-form-validation`
+
+## Component-level tasks
+- `src/components/SectionTitle.tsx` (reusable heading + subtext)
+- `src/components/StatsCard.tsx` (stat number + label)
+- `src/components/Card.tsx` (card wrapper)
+
+### PR Examples
+- `feat/components-section-title`
+- `refactor/components-card-variants`
+
+## Responsive & accessibility checklist
+- mobile-first design (`sm`, `md`, `lg`, `xl`)
+- keyboard focus states
+- aria labels for buttons and forms
+- semantic HTML tags (`<main>`, `<section>`, `<article>`, `<footer>`)
+- contrast ratios for call-to-action
+
+## Data and form integration
+- `src/services/email.ts` (API wrapper)
+- `src/api/contact` (if Next.js) or Netlify/Forms endpoint
+- Email captured fields: `email`, `name`, `company`
+
+## Analytics + metrics
+- add GA/Plausible to layout
+- track CTA click, form submit, and scroll milestones
 
 ## Deployment
-1. Connect repository to Vercel / Netlify.
-2. Environment settings for API endpoint.
-3. Set up preview builds and production branch.
+- test deploy each page by verifying critical paths:
+  - `/` home
+  - `/about`
+  - `/products`
+  - `/academy`
+  - `/contact`
+- preview environments for feature branch review
 
-## Optional Future Extensions
-1. Add separate pages for each product: `/lumina-ai`, `/academy`, `/top-up`.
-2. Add dashboard login (Auth0 or NextAuth).
-3. Add Chatbot widget in footer.
-4. Add blog section with MDX posts.
+## Optional extension (post-launch)
+- `/lumina-ai`, `/top-up` product pages
+- blog section with MDX
+- auth dashboard / user login
+- chatbot widget in footer
