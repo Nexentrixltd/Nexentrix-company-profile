@@ -1,0 +1,330 @@
+
+
+📄 PRODUCT REQUIREMENTS DOCUMENT (PRD)
+
+🌐 Project: Nexentrix Ltd Landing Page
+
+1. 🧠 Overview
+
+📌 Product Name:
+
+Nexentrix Ltd Landing Page
+
+🎯 Purpose:
+
+To create a high-converting landing page that:
+
+Explains what Nexentrix Ltd is
+
+Showcases its products (Lumina AI, Nexentrix Academy, Top-Up Platform)
+
+Attracts users, partners, and investors
+
+Captures leads (emails, sign-ups)
+
+---
+
+2. 🎯 Goals &amp; Objectives
+
+Primary Goals:
+
+Build brand credibility
+
+Convert visitors into users or leads
+
+Clearly communicate the company vision
+
+Secondary Goals:
+
+Recruit talent
+
+Promote Nexentrix Academy
+
+Drive early adoption of products
+
+---
+
+3. 👥 Target Audience
+
+Students interested in AI (Africa-focused)
+
+Startups and businesses needing automation
+
+Tech enthusiasts
+
+Investors and partners
+
+---
+
+4. 🧩 Page Structure (Sections)
+
+---
+
+🟣 1. Hero Section (Above the Fold)
+
+Content:
+
+Headline: 👉 “Building the Future with AI”
+
+Subheadline: 👉 AI-powered solutions, education, and automation for Africa and beyond.
+
+CTA Buttons:
+
+“Get Started”
+
+“Join Nexentrix Academy”
+
+Background:
+
+AI-themed animation or gradient (dark + neon style)
+
+---
+
+🟡 2. About Nexentrix Ltd
+
+Content:
+
+Short explanation:
+
+What Nexentrix is
+
+Vision and mission
+
+Example:
+
+“Nexentrix Ltd is an AI-driven technology company building intelligent solutions, empowering individuals through education, and helping businesses automate and scale.”
+
+---
+
+🔵 3. Our Divisions
+
+Cards (4 columns or grid):
+
+🧩 AI SaaS
+
+Short description
+
+🎓 Nexentrix Academy
+
+Short description
+
+🤖 Automation &amp; Consulting
+
+Short description
+
+📢 AI Influencing
+
+Short description
+
+---
+
+🟢 4. Products &amp; Projects
+
+Showcase:
+
+1. Lumina AI
+
+Healthcare AI
+
+Predictive diagnostics
+
+2. Nexentrix Academy
+
+AI learning platform
+
+3. Nexentrix Top-Up Platform
+
+Airtime, bills, subscriptions
+
+👉 Each with:
+
+Icon/image
+
+Short description
+
+“Learn More” button
+
+---
+
+🟠 5. Why Choose Us
+
+Bullet Points:
+
+AI-first approach
+
+Built for Africa
+
+Scalable technology
+
+Real-world impact
+
+---
+
+🔴 6. Nexentrix Academy Highlight
+
+Content:
+
+Section focused on education
+
+Features:
+
+AI courses
+
+Live webinars
+
+Community
+
+Mentorship
+
+CTA:
+
+👉 “Start Learning”
+
+---
+
+🟤 7. Call-To-Action Section
+
+Content:
+
+Headline: 👉 “Join the Future of AI”
+
+Buttons:
+
+Join Academy
+
+Partner With Us
+
+Contact Us
+
+---
+
+⚫ 8. Footer
+
+Include:
+
+Company name
+
+Social links
+
+Contact email
+
+Navigation links
+
+---
+
+5. 🎨 Design Requirements
+
+Style:
+
+Modern
+
+Futuristic
+
+Clean
+
+Color Theme:
+
+Dark mode (primary)
+
+Colors:
+
+Black / Deep Blue
+
+Purple / Neon Blue
+
+White text
+
+Fonts:
+
+Headings: Bold modern (e.g., Poppins, Inter)
+
+Body: Clean readable font
+
+---
+
+6. ⚙️ Functional Requirements
+
+Fully responsive (mobile + desktop)
+
+Fast loading speed
+
+Smooth scrolling
+
+Button hover animations
+
+Contact form (basic)
+
+---
+
+7. 🛠️ Tech Stack (Recommended)
+
+Frontend: React.js (or Next.js)
+
+Styling: Tailwind CSS
+
+Animations: Framer Motion
+
+Hosting: Vercel / Netlify
+
+---
+
+8. 📩 Lead Capture
+
+Include:
+
+Email input form
+
+“Join waitlist” or “Get updates”
+
+---
+
+9. 📊 Success Metrics
+
+Number of sign-ups
+
+Page conversion rate
+
+Time spent on page
+
+Bounce rate
+
+---
+
+10. 🚀 Future Enhancements
+
+Blog section
+
+Dashboard login
+
+Full product pages
+
+Payment integration
+
+AI chatbot
+
+---
+
+🔥 Quick Summary (For Developer)
+
+👉 Build a modern AI startup landing page for Nexentrix Ltd that:
+
+Explains the company
+
+Highlights products
+
+Promotes Nexentrix Academy
+
+Captures leads
+
+Looks futuristic and clean
+
+---
+
+If you want next, I can:
+
+Turn this into a Figma UI design
+
+Write exact website copy (word-for-word text)
+
+Or generate a ready-to-use React landing page code
+
