@@ -1,4 +1,5 @@
 // src/components/sections/home/FeaturedProducts.tsx
+import { useNavigate } from 'react-router-dom'
 import { ArrowRight, Sparkles, GraduationCap, CreditCard } from 'lucide-react'
 
 const products = [
@@ -23,6 +24,12 @@ const products = [
 ]
 
 const FeaturedProducts = () => {
+  const navigate = useNavigate()
+
+  const handleLearnMore = () => {
+    navigate('/products')
+  }
+
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,7 +76,9 @@ const FeaturedProducts = () => {
                         </li>
                       ))}
                     </ul>
-                    <button className="group inline-flex items-center text-primary font-medium hover:gap-2 transition-all">
+                    <button 
+                      onClick={handleLearnMore}
+                      className="group inline-flex items-center text-primary font-medium hover:gap-2 transition-all">
                       Learn More
                       <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </button>

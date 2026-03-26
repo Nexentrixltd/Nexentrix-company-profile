@@ -1,7 +1,10 @@
 // src/components/sections/products/LuminaAISpotlight.tsx
+import { useNavigate } from 'react-router-dom'
 import { Brain, Activity, TrendingUp, Shield, Clock, Award } from 'lucide-react'
 
 const LuminaAISpotlight = () => {
+  const navigate = useNavigate()
+
   const features = [
     { icon: Brain, title: 'AI Diagnostics', desc: 'Early detection with 98% accuracy' },
     { icon: Activity, title: 'Predictive Analytics', desc: 'Patient outcome prediction' },
@@ -48,11 +51,15 @@ const LuminaAISpotlight = () => {
             </div>
             
             <div className="flex gap-4 pt-4">
-              <button className="px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
+              <button 
+                onClick={() => navigate('/contact')}
+                className="px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
                 Request Demo
               </button>
-              <button className="px-6 py-2 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
-                View Case Studies
+              <button 
+                onClick={() => navigate('/documentation')}
+                className="px-6 py-2 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
+                Documentation
               </button>
             </div>
           </div>

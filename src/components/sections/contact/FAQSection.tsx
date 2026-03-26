@@ -1,6 +1,6 @@
 // src/components/sections/contact/FAQSection.tsx
 import { useState } from 'react'
-import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react'
+import { ChevronDown, ChevronUp, HelpCircle, MessageSquare } from 'lucide-react'
 
 interface FAQ {
   question: string
@@ -63,6 +63,11 @@ const FAQSection = () => {
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
+  }
+
+  const scrollToForm = () => {
+    const formSection = document.getElementById('contact-form')
+    formSection?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (
@@ -132,6 +137,20 @@ const FAQSection = () => {
               </div>
             )
           })}
+        </div>
+        
+        {/* Still Have Questions CTA */}
+        <div className="mt-12 text-center p-8 rounded-2xl bg-card border border-border">
+          <h3 className="text-xl font-bold mb-2">Still have questions?</h3>
+          <p className="text-muted-foreground mb-4">
+            Can't find what you're looking for? Send us a message and we'll get back to you.
+          </p>
+          <button 
+            onClick={scrollToForm}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105">
+            <MessageSquare className="h-4 w-4" />
+            Contact Support
+          </button>
         </div>
       </div>
     </section>

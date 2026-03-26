@@ -2,6 +2,16 @@
 import { GraduationCap, ArrowRight, Gift, Shield, Clock } from 'lucide-react'
 
 const AcademyCTA = () => {
+
+  const handleStartLearning = () => {
+    const coursesSection = document.getElementById('courses')
+    coursesSection?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handleViewCourses = () => {
+    const coursesSection = document.getElementById('courses')
+    coursesSection?.scrollIntoView({ behavior: 'smooth' })
+  }
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,11 +43,15 @@ const AcademyCTA = () => {
             </div>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="group inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
+              <button 
+                onClick={handleStartLearning}
+                className="group inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
                 Start Learning Free
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="inline-flex items-center gap-2 px-8 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
+              <button 
+                onClick={handleViewCourses}
+                className="inline-flex items-center gap-2 px-8 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
                 View All Courses
               </button>
             </div>

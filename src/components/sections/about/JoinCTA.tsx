@@ -1,7 +1,14 @@
 // src/components/sections/about/JoinCTA.tsx
+import { useNavigate } from 'react-router-dom'
 import { ArrowRight, Briefcase, TrendingUp, Zap } from 'lucide-react'
 
 const JoinCTA = () => {
+  const navigate = useNavigate()
+
+  const handleViewPositions = () => {
+    navigate('/careers')
+  }
+
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +42,9 @@ const JoinCTA = () => {
               })}
             </div>
             
-            <button className="group inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105">
+            <button 
+              onClick={handleViewPositions}
+              className="group inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105">
               View Open Positions
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </button>

@@ -1,7 +1,21 @@
 // src/components/sections/home/HeroSection.tsx
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ArrowRight, Play } from 'lucide-react'
+import VideoModal from '../../ui/VideoModal'
 
 const HeroSection = () => {
+  const navigate = useNavigate()
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
+
+  const handleGetStarted = () => {
+    navigate('/contact')
+  }
+
+  const handleWatchDemo = () => {
+    setIsVideoOpen(true)
+  }
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Gradient */}
@@ -31,11 +45,15 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105">
+            <button 
+              onClick={handleGetStarted}
+              className="group inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105">
               Get Started
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="inline-flex items-center justify-center px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
+            <button 
+              onClick={handleWatchDemo}
+              className="inline-flex items-center justify-center px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
               <Play className="mr-2 h-4 w-4" />
               Watch Demo
             </button>
@@ -57,6 +75,13 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      <VideoModal 
+        isOpen={isVideoOpen}
+        onClose={() => setIsVideoOpen(false)}
+        videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        title="Nexentrix Demo"
+      />
     </section>
   )
 }

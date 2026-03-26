@@ -1,4 +1,5 @@
 // src/components/sections/academy/LearningPaths.tsx
+import { useNavigate } from 'react-router-dom'
 import { Target, Briefcase, Rocket } from 'lucide-react'
 
 const paths = [
@@ -32,13 +33,19 @@ const paths = [
 ]
 
 const LearningPaths = () => {
+  const navigate = useNavigate()
+
+  const handleViewPath = () => {
+    navigate('/learning-paths')
+  }
+
   return (
     <section className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="badge inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
-            <Target className="h-4 w-4 text-primary mr-2" />
-            <span className="text-sm text-primary">Career Paths</span>
+            <Target className="h-4 w-4 mr-2" />
+            <span className="text-sm">Career Paths</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Choose Your Learning Path
@@ -92,7 +99,9 @@ const LearningPaths = () => {
                     </div>
                   </div>
                   
-                  <button className="w-full mt-6 px-4 py-2 rounded-lg border border-primary/30 hover:bg-primary/10 transition-all font-medium">
+                  <button 
+                    onClick={handleViewPath}
+                    className="w-full mt-6 px-4 py-2 rounded-lg border border-primary/30 hover:bg-primary/10 transition-all font-medium">
                     View Path
                   </button>
                 </div>

@@ -1,7 +1,10 @@
 // src/components/sections/products/TopUpSpotlight.tsx
+import { useNavigate } from 'react-router-dom'
 import { Smartphone, Zap, Wallet, RefreshCw, Shield, TrendingUp } from 'lucide-react'
 
 const TopUpSpotlight = () => {
+  const navigate = useNavigate()
+
   return (
     <section className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,7 +58,9 @@ const TopUpSpotlight = () => {
               </div>
             </div>
             
-            <button className="inline-flex items-center px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
+            <button 
+              onClick={() => navigate('/products/top-up-platform')}
+              className="inline-flex items-center px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
               Try Top-Up Now
             </button>
           </div>

@@ -1,7 +1,17 @@
 // src/components/sections/careers/ApplicationCTA.tsx
 import { Send, Mail, MessageCircle, Clock, Heart } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const ApplicationCTA = () => {
+  const navigate = useNavigate()
+
+  const scrollToOpenPositions = () => {
+    const element = document.querySelector('[data-shape="careers-open-positions"]')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <section className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,11 +25,17 @@ const ApplicationCTA = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <button className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
+            <button
+              onClick={scrollToOpenPositions}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all"
+            >
               View All Openings
               <Send className="h-4 w-4" />
             </button>
-            <button className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
+            <button
+              onClick={() => navigate('/contact')}
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all"
+            >
               <Mail className="h-4 w-4" />
               Sign Up for Job Alerts
             </button>

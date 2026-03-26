@@ -1,7 +1,21 @@
 // src/components/sections/home/AcademyHighlight.tsx
+import { useNavigate } from 'react-router-dom'
 import { GraduationCap, Video, Users, MessageCircle, ArrowRight } from 'lucide-react'
 
 const AcademyHighlight = () => {
+  const navigate = useNavigate()
+
+  const handleStartLearning = () => {
+    navigate('/academy')
+  }
+
+  const handleViewCourses = () => {
+    navigate('/academy')
+  }
+
+  const handleEnroll = () => {
+    navigate('/academy')
+  }
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background with primary overlay */}
@@ -44,11 +58,15 @@ const AcademyHighlight = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="group inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105">
+              <button 
+                onClick={handleStartLearning}
+                className="group inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105">
                 Start Learning Free
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="inline-flex items-center justify-center px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
+              <button 
+                onClick={handleViewCourses}
+                className="inline-flex items-center justify-center px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
                 View All Courses
               </button>
             </div>
@@ -64,6 +82,7 @@ const AcademyHighlight = () => {
               ].map((course, idx) => (
                 <div
                   key={idx}
+                  onClick={handleEnroll}
                   className={`bg-card p-5 rounded-2xl ${course.color} border border-primary/20 hover:border-primary/50 transition-all hover:translate-x-2 cursor-pointer`}
                 >
                   <div className="flex justify-between items-start mb-2">

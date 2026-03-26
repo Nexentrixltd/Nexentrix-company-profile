@@ -32,6 +32,11 @@ const supportChannels = [
 ]
 
 const SupportChannels = () => {
+  const scrollToForm = () => {
+    const formSection = document.getElementById('contact-form')
+    formSection?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <section className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,7 +82,9 @@ const SupportChannels = () => {
                   </div>
                 </div>
                 
-                <button className="mt-4 w-full inline-flex items-center justify-center gap-2 text-primary text-sm font-medium hover:gap-3 transition-all">
+                <button 
+                  onClick={scrollToForm}
+                  className="mt-4 w-full inline-flex items-center justify-center gap-2 text-primary text-sm font-medium hover:gap-3 transition-all">
                   Get Support
                   <ChevronRight className="h-4 w-4" />
                 </button>

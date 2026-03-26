@@ -11,6 +11,15 @@ import Academy from './pages/Academy'
 import Contact from './pages/Contact'
 import Careers from './pages/Careers'
 import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
+import LuminaAI from './pages/LuminaAI'
+import TopUpPlatform from './pages/TopUpPlatform'
+import Documentation from './pages/Documentation'
+import CourseEnrollment from './pages/CourseEnrollment'
+import LearningPathDetail from './pages/LearningPathDetail'
+import WebinarRegistration from './pages/WebinarRegistration'
+import MentorshipApplication from './pages/MentorshipApplication'
+import DEIReport from './pages/DEIReport'
 import NotFound from './pages/NotFound'
 import Error500 from './pages/Error500'
 import PrivacyPolicy from './pages/PrivacyPolicy'
@@ -86,10 +95,19 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/lumina-ai" element={<LuminaAI />} />
+            <Route path="/products/top-up-platform" element={<TopUpPlatform />} />
             <Route path="/academy" element={<Academy />} />
+            <Route path="/enroll" element={<CourseEnrollment />} />
+            <Route path="/learning-paths" element={<LearningPathDetail />} />
+            <Route path="/webinars" element={<WebinarRegistration />} />
+            <Route path="/mentorship" element={<MentorshipApplication />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="/documentation" element={<Documentation />} />
+            <Route path="/dei-report" element={<DEIReport />} />
 <Route path="/privacy" element={<PrivacyPolicy />} />
 <Route path="/terms" element={<TermsOfService />} />
 <Route path="/cookies" element={<CookiePolicy />} />

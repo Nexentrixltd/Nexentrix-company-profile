@@ -1,5 +1,5 @@
 // src/components/sections/contact/ContactHero.tsx
-import { Mail, Phone, MapPin, Clock, MessageCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, MessageCircle, ArrowDown } from 'lucide-react'
 
 const contactInfo = [
   {
@@ -33,6 +33,11 @@ const contactInfo = [
 ]
 
 const ContactHero = () => {
+  const scrollToForm = () => {
+    const formSection = document.getElementById('contact-form')
+    formSection?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background Elements */}
@@ -56,6 +61,13 @@ const ContactHero = () => {
             Have questions about our products, partnership opportunities, or just want to say hello? 
             Reach out to us through any of these channels.
           </p>
+          
+          <button 
+            onClick={scrollToForm}
+            className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105">
+            Send Us a Message
+            <ArrowDown className="h-4 w-4" />
+          </button>
         </div>
         
         {/* Contact Info Cards */}

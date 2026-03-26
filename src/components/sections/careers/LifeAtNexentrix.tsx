@@ -1,5 +1,7 @@
 // src/components/sections/careers/LifeAtNexentrix.tsx
+import { useState } from 'react'
 import { Users, Coffee, Laptop, PartyPopper, Trophy, Heart } from 'lucide-react'
+import VideoModal from '../../ui/VideoModal'
 
 const cultureMoments = [
   {
@@ -47,6 +49,8 @@ const cultureMoments = [
 ]
 
 const LifeAtNexentrix = () => {
+  const [showVideo, setShowVideo] = useState(false)
+
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,7 +89,10 @@ const LifeAtNexentrix = () => {
         {/* Culture Video Placeholder */}
         <div className="mt-12 relative rounded-2xl overflow-hidden">
           <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-            <button className="group flex flex-col items-center gap-3">
+            <button
+              onClick={() => setShowVideo(true)}
+              className="group flex flex-col items-center gap-3"
+            >
               <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-all">
                 <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-primary border-b-[12px] border-b-transparent ml-1" />
               </div>
@@ -93,6 +100,13 @@ const LifeAtNexentrix = () => {
             </button>
           </div>
         </div>
+
+        {/* Video Modal */}
+        <VideoModal
+          isOpen={showVideo}
+          onClose={() => setShowVideo(false)}
+          videoUrl="https://www.youtube.com/watch?v=jNQXAC9IVRw"
+        />
       </div>
     </section>
   )
