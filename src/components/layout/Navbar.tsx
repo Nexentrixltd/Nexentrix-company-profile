@@ -41,10 +41,10 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg transform rotate-45" />
+          <Link to="/" className="flex items-center space-x-2">
+            <img src="/NEXIUS FAVICON.png" alt="Nexentrix logo" className="w-8 h-8 object-contain" />
             <span className="text-xl font-bold text-foreground">Nexentrix</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

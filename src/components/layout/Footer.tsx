@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg transform rotate-45" />
+              <img src="/NEXIUS FAVICON.png" alt="Nexentrix logo" className="w-8 h-8 object-contain" />
               <span className="text-xl font-bold">Nexentrix</span>
             </div>
             <p className="text-muted-foreground text-sm mb-4">
