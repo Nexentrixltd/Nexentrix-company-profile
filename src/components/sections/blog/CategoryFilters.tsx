@@ -1,11 +1,11 @@
 import { Sparkles, Briefcase, GraduationCap, TrendingUp, Users, Newspaper } from 'lucide-react'
 
 const categories = [
-  { id: 'all', name: 'All Posts', icon: Newspaper, count: 24 },
-  { id: 'ai-trends', name: 'AI Trends', icon: TrendingUp, count: 8 },
-  { id: 'product-updates', name: 'Product Updates', icon: Sparkles, count: 6 },
-  { id: 'academy', name: 'Academy', icon: GraduationCap, count: 5 },
-  { id: 'case-studies', name: 'Case Studies', icon: Briefcase, count: 3 },
+  { id: 'all', name: 'All Posts', icon: Newspaper, count: 10 },
+  { id: 'ai-trends', name: 'AI Trends', icon: TrendingUp, count: 2 },
+  { id: 'product-updates', name: 'Product Updates', icon: Sparkles, count: 2 },
+  { id: 'academy', name: 'Academy', icon: GraduationCap, count: 2 },
+  { id: 'industry-trends', name: 'Industry Trends', icon: Briefcase, count: 2 },
   { id: 'community', name: 'Community', icon: Users, count: 2 },
 ]
 
