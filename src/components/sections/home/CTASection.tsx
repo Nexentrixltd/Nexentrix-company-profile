@@ -1,7 +1,17 @@
 // src/components/sections/home/CTASection.tsx
+import { useNavigate } from 'react-router-dom'
 import { ArrowRight, Calendar, Users, Award } from 'lucide-react'
 
 const CTASection = () => {
+  const navigate = useNavigate()
+
+  const handleGetStarted = () => {
+    navigate('/contact')
+  }
+
+  const handleScheduleDemo = () => {
+    navigate('/contact')
+  }
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Animated Background */}
@@ -27,11 +37,15 @@ const CTASection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105">
+              <button 
+                onClick={handleGetStarted}
+                className="group inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105">
                 Get Started Today
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="inline-flex items-center justify-center px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
+              <button 
+                onClick={handleScheduleDemo}
+                className="inline-flex items-center justify-center px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
                 Schedule a Demo
                 <Calendar className="ml-2 h-4 w-4" />
               </button>

@@ -1,4 +1,5 @@
 // src/components/sections/products/ProductShowcase.tsx
+import { useNavigate } from 'react-router-dom'
 import { Sparkles, GraduationCap, CreditCard, ArrowRight} from 'lucide-react'
 
 const products = [
@@ -35,6 +36,18 @@ const products = [
 ]
 
 const ProductShowcase = () => {
+  const navigate = useNavigate()
+
+  const handleLearnMore = (productName: string) => {
+    if (productName === 'Lumina AI') {
+      navigate('/products/lumina-ai')
+    } else if (productName === 'Nexentrix Academy') {
+      navigate('/academy')
+    } else if (productName === 'Top-Up Platform') {
+      navigate('/products/top-up-platform')
+    }
+  }
+
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,7 +100,9 @@ const ProductShowcase = () => {
                     ))}
                   </div>
                   
-                  <button className="mt-6 w-full group inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-primary/30 hover:bg-primary/10 transition-all">
+                  <button 
+                    onClick={() => handleLearnMore(product.name)}
+                    className="mt-6 w-full group inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-primary/30 hover:bg-primary/10 transition-all">
                     <span className="text-sm font-medium">Learn More</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </button>

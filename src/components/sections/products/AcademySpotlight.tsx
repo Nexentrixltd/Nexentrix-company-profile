@@ -1,7 +1,10 @@
 // src/components/sections/products/AcademySpotlight.tsx
+import { useNavigate } from 'react-router-dom'
 import { GraduationCap, Video, Users, Award, Clock, Globe } from 'lucide-react'
 
 const AcademySpotlight = () => {
+  const navigate = useNavigate()
+
   const courses = [
     { name: 'AI Fundamentals', students: '2,500+', duration: '4 weeks', level: 'Beginner' },
     { name: 'Machine Learning', students: '1,800+', duration: '8 weeks', level: 'Intermediate' },
@@ -77,7 +80,9 @@ const AcademySpotlight = () => {
               })}
             </div>
             
-            <button className="inline-flex items-center px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
+            <button 
+              onClick={() => navigate('/academy')}
+              className="inline-flex items-center px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
               Start Learning Free
             </button>
           </div>

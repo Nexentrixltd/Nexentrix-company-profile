@@ -1,7 +1,18 @@
 // src/components/sections/careers/CareersHero.tsx
+import { useState } from 'react'
 import { Briefcase, Users, TrendingUp, Award, ArrowRight, Play } from 'lucide-react'
+import VideoModal from '../../ui/VideoModal'
 
 const CareersHero = () => {
+  const [showVideo, setShowVideo] = useState(false)
+
+  const scrollToOpenPositions = () => {
+    const element = document.querySelector('[data-shape="careers-open-positions"]')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background Elements */}
@@ -48,17 +59,30 @@ const CareersHero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mt-10">
-            <button className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
+            <button
+              onClick={scrollToOpenPositions}
+              className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all"
+            >
               View Open Positions
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
+            <button
+              onClick={() => setShowVideo(true)}
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all"
+            >
               <Play className="h-4 w-4" />
               Watch Culture Video
             </button>
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={showVideo}
+        onClose={() => setShowVideo(false)}
+        videoUrl="https://www.youtube.com/watch?v=jNQXAC9IVRw"
+      />
     </section>
   )
 }

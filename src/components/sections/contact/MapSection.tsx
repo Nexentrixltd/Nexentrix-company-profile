@@ -1,7 +1,12 @@
 // src/components/sections/contact/MapSection.tsx
-import { MapPin } from 'lucide-react'
+import { MapPin, MessageSquare } from 'lucide-react'
 
 const MapSection = () => {
+  const scrollToForm = () => {
+    const formSection = document.getElementById('contact-form')
+    formSection?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <section className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,9 +27,21 @@ const MapSection = () => {
               <p className="text-sm text-muted-foreground mt-2">
                 📍 Interactive map integration coming soon
               </p>
-              <button className="mt-4 px-4 py-2 rounded-lg border border-primary/30 hover:bg-primary/10 transition-all text-sm">
-                Get Directions
-              </button>
+              <div className="flex flex-wrap justify-center gap-3 mt-4">
+                <button 
+                  onClick={scrollToForm}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all">
+                  <MessageSquare className="h-4 w-4" />
+                  Contact Us
+                </button>
+                <a 
+                  href="https://maps.google.com/?q=Victoria+Island+Lagos+Nigeria"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-lg border border-primary/30 hover:bg-primary/10 transition-all text-sm">
+                  Get Directions
+                </a>
+              </div>
             </div>
           </div>
           

@@ -1,7 +1,10 @@
 // src/components/sections/products/ProductCTA.tsx
+import { useNavigate } from 'react-router-dom'
 import { ArrowRight, MessageCircle, Calendar, FileText } from 'lucide-react'
 
 const ProductCTA = () => {
+  const navigate = useNavigate()
+
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,16 +19,22 @@ const ProductCTA = () => {
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
+              <button 
+                onClick={() => navigate('/contact')}
+                className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
                 <Calendar className="h-4 w-4" />
                 Schedule Demo
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
+              <button 
+                onClick={() => navigate('/contact')}
+                className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
                 <MessageCircle className="h-4 w-4" />
                 Contact Sales
               </button>
-              <button className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
+              <button 
+                onClick={() => navigate('/documentation')}
+                className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
                 <FileText className="h-4 w-4" />
                 View Documentation
               </button>

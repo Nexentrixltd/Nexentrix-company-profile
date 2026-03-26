@@ -1,4 +1,5 @@
 // src/components/sections/products/PricingTiers.tsx
+import { useNavigate } from 'react-router-dom'
 import { Check, Sparkles, } from 'lucide-react'
 
 const pricing = [
@@ -14,6 +15,8 @@ const pricing = [
 ]
 
 const PricingTiers = () => {
+  const navigate = useNavigate()
+
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +47,9 @@ const PricingTiers = () => {
                   </li>
                 ))}
               </ul>
-              <button className={`w-full py-2 rounded-lg font-medium transition-all ${
+              <button 
+                onClick={() => navigate('/contact')}
+                className={`w-full py-2 rounded-lg font-medium transition-all ${
                 idx === 1
                   ? 'bg-primary text-primary-foreground hover:bg-primary/90'
                   : 'border border-border hover:bg-secondary'

@@ -1,7 +1,13 @@
 // src/components/sections/academy/MentorshipProgram.tsx
+import { useNavigate } from 'react-router-dom'
 import { MessageCircle, Calendar, Users, Target, Sparkles, Shield, ArrowRight } from 'lucide-react'
 
 const MentorshipProgram = () => {
+  const navigate = useNavigate()
+
+  const handleApply = () => {
+    navigate('/mentorship')
+  }
   return (
     <section className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +46,9 @@ const MentorshipProgram = () => {
               })}
             </div>
             
-            <button className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
+            <button 
+              onClick={handleApply}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
               Apply for Mentorship
               <ArrowRight className="h-4 w-4" />
             </button>

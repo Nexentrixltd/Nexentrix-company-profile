@@ -2,6 +2,13 @@
 import { GraduationCap, Users, Calendar, Award, ArrowRight, Sparkles } from 'lucide-react'
 
 const InternshipProgram = () => {
+  const scrollToOpenPositions = () => {
+    const element = document.querySelector('[data-shape="careers-open-positions"]')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <section className="py-20 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +47,10 @@ const InternshipProgram = () => {
               })}
             </div>
             
-            <button className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
+            <button
+              onClick={scrollToOpenPositions}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all"
+            >
               View Internships
               <ArrowRight className="h-4 w-4" />
             </button>

@@ -1,4 +1,5 @@
 // src/components/sections/academy/CourseGrid.tsx
+import { useNavigate } from 'react-router-dom'
 import { Clock, Users, Star, ArrowRight, BookOpen, Video } from 'lucide-react'
 
 interface Course {
@@ -130,6 +131,12 @@ interface CourseGridProps {
 }
 
 const CourseGrid = ({ activeCategory }: CourseGridProps) => {
+  const navigate = useNavigate()
+
+  const handleEnroll = () => {
+    navigate('/enroll')
+  }
+
   const filteredCourses = activeCategory === 'all' 
     ? courses 
     : courses.filter(course => course.category === activeCategory)
@@ -190,7 +197,9 @@ const CourseGrid = ({ activeCategory }: CourseGridProps) => {
               </div>
             </div>
             
-            <button className="w-full group/btn inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-primary/30 hover:bg-primary/10 transition-all">
+            <button 
+              onClick={handleEnroll}
+              className="w-full group/btn inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-primary/30 hover:bg-primary/10 transition-all">
               <BookOpen className="h-4 w-4" />
               <span className="text-sm font-medium">Enroll Now</span>
               <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />

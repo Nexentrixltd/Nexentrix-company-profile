@@ -1,7 +1,19 @@
 // src/components/sections/academy/AcademyHero.tsx
+import { useState } from 'react'
 import { GraduationCap, Users, Video, Award, ArrowRight, Play } from 'lucide-react'
+import VideoModal from '../../ui/VideoModal'
 
 const AcademyHero = () => {
+  const [showVideo, setShowVideo] = useState(false)
+
+  const handleStartLearning = () => {
+    const coursesSection = document.getElementById('courses')
+    coursesSection?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handleWatchIntro = () => {
+    setShowVideo(true)
+  }
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background Elements */}
@@ -52,11 +64,15 @@ const AcademyHero = () => {
             
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
-              <button className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
+              <button 
+                onClick={handleStartLearning}
+                className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
                 Start Learning Free
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
+              <button 
+                onClick={handleWatchIntro}
+                className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
                 <Play className="h-4 w-4" />
                 Watch Intro
               </button>
@@ -89,6 +105,12 @@ const AcademyHero = () => {
           </div>
         </div>
       </div>
+
+      <VideoModal
+        isOpen={showVideo}
+        onClose={() => setShowVideo(false)}
+        videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      />
     </section>
   )
 }

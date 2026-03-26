@@ -1,4 +1,5 @@
 // src/components/sections/academy/LiveWebinars.tsx
+import { useNavigate } from 'react-router-dom'
 import { Calendar, Clock, Users, Video, ArrowRight, Bell } from 'lucide-react'
 
 const webinars = [
@@ -29,6 +30,16 @@ const webinars = [
 ]
 
 const LiveWebinars = () => {
+  const navigate = useNavigate()
+
+  const handleGetReminders = () => {
+    navigate('/webinars')
+  }
+
+  const handleRegister = () => {
+    navigate('/webinars')
+  }
+
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,7 +56,9 @@ const LiveWebinars = () => {
               Learn from experts in real-time
             </p>
           </div>
-          <button className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border hover:bg-secondary transition-all">
+          <button 
+            onClick={handleGetReminders}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border hover:bg-secondary transition-all">
             <Bell className="h-4 w-4" />
             <span className="text-sm">Get Reminders</span>
           </button>
@@ -76,7 +89,9 @@ const LiveWebinars = () => {
                 </div>
               </div>
               
-              <button className="w-full group/btn inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-all">
+              <button 
+                onClick={handleRegister}
+                className="w-full group/btn inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-all">
                 <span className="text-sm font-medium">Register Now</span>
                 <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
               </button>
