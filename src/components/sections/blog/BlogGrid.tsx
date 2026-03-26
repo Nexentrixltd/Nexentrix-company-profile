@@ -1,6 +1,7 @@
 // src/components/sections/blog/BlogGrid.tsx
 import { Calendar, Clock, ArrowRight, Bookmark, Share2 } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 interface Article {
   id: number
@@ -123,8 +124,24 @@ interface BlogGridProps {
 }
 
 const BlogGrid = ({ activeCategory, searchQuery = '' }: BlogGridProps) => {
-  const [savedPosts, setSavedPosts] = useState<number[]>([])
+  const navigate = useNavigate()
+  const [savedPosts, setSavedPosts] = useState<number[]>(() => {
+    const stored = localStorage.getItem('saved-blog-posts')
+    if (stored) {
+      try {
+        return JSON.parse(stored)
+      } catch {
+        return []
+      }
+    }
+    return []
+  })
+  const [copiedArticleId, setCopiedArticleId] = useState<number | null>(null)
   const [visibleCount, setVisibleCount] = useState(6)
+
+  useEffect(() => {
+    localStorage.setItem('saved-blog-posts', JSON.stringify(savedPosts))
+  }, [savedPosts])
 
   const filteredArticles = articles.filter(article => {
     const matchesCategory = activeCategory === 'all' || 
@@ -193,9 +210,20 @@ const BlogGrid = ({ activeCategory, searchQuery = '' }: BlogGridProps) => {
                     <span className={`text-xs px-2 py-1 rounded-full ${getCategoryColor(article.category)}`}>
                       {article.category}
                     </span>
-                    <button aria-label="Share article" className="p-1 rounded-lg hover:bg-secondary transition-colors">
+                    <button
+                      onClick={async () => {
+                        await navigator.clipboard.writeText(`${window.location.origin}/blog/${article.id}`)
+                        setCopiedArticleId(article.id)
+                        setTimeout(() => setCopiedArticleId(null), 2000)
+                      }}
+                      aria-label="Copy article link"
+                      className="p-1 rounded-lg hover:bg-secondary transition-colors"
+                    >
                       <Share2 className="h-3 w-3 text-muted-foreground" />
                     </button>
+                    {copiedArticleId === article.id && (
+                      <span className="ml-2 text-xs text-primary">Copied!</span>
+                    )}
                   </div>
                   
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors line-clamp-2">
@@ -225,7 +253,10 @@ const BlogGrid = ({ activeCategory, searchQuery = '' }: BlogGridProps) => {
                     </div>
                   </div>
                   
-                  <button className="w-full mt-4 group/btn inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-primary/30 hover:bg-primary/10 transition-all">
+                  <button
+                    onClick={() => navigate(`/blog/${article.id}`)}
+                    className="w-full mt-4 group/btn inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-primary/30 hover:bg-primary/10 transition-all"
+                  >
                     <span className="text-sm font-medium">Read More</span>
                     <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                   </button>

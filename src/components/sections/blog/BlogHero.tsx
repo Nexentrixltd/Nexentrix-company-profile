@@ -1,8 +1,9 @@
 // src/components/sections/blog/BlogHero.tsx
 import { Calendar, Clock, User, ArrowRight, TrendingUp } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const featuredPost = {
-  id: 1,
+  id: 10,
   title: 'The Future of AI in Africa: Trends Shaping 2025 and Beyond',
   excerpt: 'From healthcare to agriculture, discover how artificial intelligence is transforming the African continent and creating unprecedented opportunities for innovation.',
   category: 'Industry Trends',
@@ -15,6 +16,8 @@ const featuredPost = {
 }
 
 const BlogHero = () => {
+  const navigate = useNavigate()
+
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background Elements */}
@@ -69,7 +72,10 @@ const BlogHero = () => {
                   </div>
                 </div>
                 
-                <button className="inline-flex items-center gap-2 text-primary font-medium group/btn">
+                <button
+                  onClick={() => navigate('/blog/1')}
+                  className="inline-flex items-center gap-2 text-primary font-medium group/btn"
+                >
                   Read Article
                   <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                 </button>

@@ -2,13 +2,13 @@
 import { Brain, Code, Database, Shield, Bot, Sparkles, TrendingUp } from 'lucide-react'
 
 const categories = [
-  { id: 'all', name: 'All Courses', icon: Sparkles, count: 52 },
-  { id: 'fundamentals', name: 'AI Fundamentals', icon: Brain, count: 12 },
-  { id: 'machine-learning', name: 'Machine Learning', icon: Bot, count: 15 },
-  { id: 'deep-learning', name: 'Deep Learning', icon: TrendingUp, count: 8 },
-  { id: 'data-science', name: 'Data Science', icon: Database, count: 10 },
-  { id: 'ethics', name: 'AI Ethics', icon: Shield, count: 4 },
-  { id: 'programming', name: 'Programming', icon: Code, count: 3 },
+  { id: 'all', name: 'All Courses', icon: Sparkles, count: 9 },
+  { id: 'fundamentals', name: 'AI Fundamentals', icon: Brain, count: 1 },
+  { id: 'machine-learning', name: 'Machine Learning', icon: Bot, count: 2 },
+  { id: 'deep-learning', name: 'Deep Learning', icon: TrendingUp, count: 2 },
+  { id: 'data-science', name: 'Data Science', icon: Database, count: 2 },
+  { id: 'ethics', name: 'AI Ethics', icon: Shield, count: 1 },
+  { id: 'programming', name: 'Programming', icon: Code, count: 1 },
 ]
 
 interface CourseCategoriesProps {
