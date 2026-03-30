@@ -1,6 +1,6 @@
 // src/App.tsx (with all routes)
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -47,6 +47,23 @@ class ErrorBoundary extends React.Component<React.PropsWithChildren<object>, { h
   }
 }
 
+// Handle 404 redirects from GitHub Pages
+function RedirectHandler() {
+  const navigate = useNavigate()
+  
+  useEffect(() => {
+    const redirectPath = sessionStorage.getItem('redirectPath')
+    if (redirectPath) {
+      sessionStorage.removeItem('redirectPath')
+      const base = '/Nexentrix-company-profile'
+      const path = redirectPath.replace(base, '')
+      navigate(path || '/')
+    }
+  }, [navigate])
+  
+  return null
+}
+
 function App() {
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     if (typeof window !== 'undefined') {
@@ -87,6 +104,7 @@ function App() {
 
   return (
     <BrowserRouter basename="/Nexentrix-company-profile">
+      <RedirectHandler />
       <ScrollToTop />
       <div className="min-h-screen bg-background">
         <Navbar theme={theme} onToggleTheme={toggleTheme} />
