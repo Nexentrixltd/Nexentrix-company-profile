@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom'
 
 const featuredPost = {
   id: 10,
-  title: 'The Future of AI in Africa: Trends Shaping 2025 and Beyond',
+  title: 'The Future of AI in Africa: Trends Shaping 2027 and Beyond',
   excerpt: 'From healthcare to agriculture, discover how artificial intelligence is transforming the African continent and creating unprecedented opportunities for innovation.',
   category: 'Industry Trends',
   author: 'Dr. Oluwaseun Adekunle',
   authorRole: 'CEO & Founder',
-  date: 'March 15, 2024',
+  date: 'March 15, 2026',
   readTime: '8 min read',
   image: '🌍',
   featured: true,

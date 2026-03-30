@@ -7,7 +7,7 @@ import {
 import PageLayout from '../components/layout/PageLayout'
 
 const DEIReport = () => {
-  const [activeYear, setActiveYear] = useState('2024')
+  const [activeYear, setActiveYear] = useState('2026')
 
   const metrics = [
     { 
@@ -90,7 +90,7 @@ const DEIReport = () => {
   ]
 
   const commitments = [
-    'Achieve 50% gender representation by 2025',
+    'Achieve 50% gender representation by 2027',
     'Maintain pay equity above 95% across all demographics',
     'Increase representation of underrepresented minorities in leadership to 40% by 2026',
     'Provide 100+ hours of DEI training to every employee annually',
@@ -100,23 +100,13 @@ const DEIReport = () => {
 
   const highlights = [
     {
-      year: '2024',
+      year: '2026',
       achievements: [
-        'Achieved 45% women representation (up from 38% in 2023)',
-        'Launched 5 Employee Resource Groups with 80% participation',
+        'Achieved 45% women representation in founding team',
+        'Launched 5 Employee Resource Groups with strong early participation',
         'Implemented blind resume review for all technical positions',
         'Established DEI Council with representatives from all departments',
         'Provided unconscious bias training to 100% of leadership',
-      ]
-    },
-    {
-      year: '2023',
-      achievements: [
-        'Increased women in leadership to 52%',
-        'Expanded recruitment to 3 new African countries',
-        'Launched first annual DEI survey with 92% participation',
-        'Implemented flexible parental leave policy (6 months)',
-        'Created mentorship program for women in engineering',
       ]
     },
   ]
@@ -152,7 +142,7 @@ const DEIReport = () => {
               </button>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Calendar className="h-4 w-4" />
-                <span>Last updated: March 2024</span>
+                <span>Last updated: March 2026</span>
               </div>
             </div>
           </div>

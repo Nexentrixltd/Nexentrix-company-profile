@@ -19,14 +19,33 @@ const NewsletterSignup = () => {
     
     setStatus('submitting')
     
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      console.log('Newsletter signup:', email)
-      setStatus('success')
-      setMessage('Thanks for subscribing! Check your inbox for updates.')
-      setEmail('')
-      setTimeout(() => setStatus('idle'), 5000)
+      const response = await fetch('https://formsubmit.co/ajax/info.nexentrixltd@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          '� NEXENTRIX NEWSLETTER': '━━━━━━━━━━━━━━━━',
+          '📋 Form Type': '✨ Newsletter Subscription',
+          '📧 Subscriber Email': email,
+          '📍 Source': 'Contact Page Newsletter Signup',
+          '🕐 Subscribed': new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' }),
+          _subject: '🔶 [Nexentrix Newsletter] New Contact Page Subscriber',
+          _template: 'table',
+          _captcha: 'false'
+        })
+      })
+      
+      if (response.ok) {
+        setStatus('success')
+        setMessage('Thanks for subscribing! Check your inbox for updates.')
+        setEmail('')
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        throw new Error('Subscription failed')
+      }
     } catch {
       setStatus('error')
       setMessage('Something went wrong. Please try again.')

@@ -1,5 +1,5 @@
 // src/components/layout/Footer.tsx
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa'
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi'
 
 const Footer = () => {
@@ -20,7 +20,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-3">
               <a
-                href="https://facebook.com/nexentrix"
+                href="https://www.facebook.com/share/1KAPY3koe9/"
                 aria-label="Nexentrix on Facebook"
                 title="Nexentrix on Facebook"
                 target="_blank"
@@ -30,7 +30,7 @@ const Footer = () => {
                 <FaFacebookF size={16} />
               </a>
               <a
-                href="https://twitter.com/nexentrix"
+                href="https://x.com/nexentrix"
                 aria-label="Nexentrix on Twitter"
                 title="Nexentrix on Twitter"
                 target="_blank"
@@ -38,6 +38,16 @@ const Footer = () => {
                 className="p-2 rounded-lg bg-secondary hover:bg-primary/20 transition-colors"
               >
                 <FaTwitter size={16} />
+              </a>
+              <a
+                href="https://www.instagram.com/nexentrix.ltd?igsh=bGZpdHdsOGtsYW5t"
+                aria-label="Nexentrix on Instagram"
+                title="Nexentrix on Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-secondary hover:bg-primary/20 transition-colors"
+              >
+                <FaInstagram size={16} />
               </a>
               <a
                 href="https://linkedin.com/company/nexentrix"
@@ -50,7 +60,7 @@ const Footer = () => {
                 <FaLinkedinIn size={16} />
               </a>
               <a
-                href="https://github.com/nexentrix"
+                href="https://github.com/Nexentrix"
                 aria-label="Nexentrix on GitHub"
                 title="Nexentrix on GitHub"
                 target="_blank"
@@ -90,19 +100,25 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <FiMail size={14} />
-                <a href="mailto:hello@nexentrix.com" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">
-                  hello@nexentrix.com
+                <a href="mailto:info.nexentrixltd@gmail.com" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">
+                  info.nexentrixltd@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <FiPhone size={14} />
-                <a href="tel:+1234567890" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">
-                  +1 (234) 567-890
+                <a href="tel:+2349110468788" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">
+                  +234(0)9110468788
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <FiPhone size={14} />
+                <a href="tel:+2349133300572" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">
+                  +234(0)9133300572
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <FiMapPin size={14} />
-                <span>Lagos, Nigeria</span>
+                <span>FCT, Abuja Nigeria</span>
               </li>
             </ul>
           </div>

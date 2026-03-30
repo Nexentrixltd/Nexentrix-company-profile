@@ -37,7 +37,7 @@ const OfficeCulture = () => {
             
             <p className="text-muted-foreground">
               We believe great work happens when people feel valued, inspired, and empowered. 
-              Our Lagos HQ is designed to foster creativity and collaboration.
+              Our Abuja HQ is designed to foster creativity and collaboration.
             </p>
             
             <div className="space-y-4">
@@ -57,7 +57,7 @@ const OfficeCulture = () => {
             
             <div className="flex items-center gap-2 pt-4">
               <MapPin className="h-4 w-4 text-primary" />
-              <span className="text-sm text-muted-foreground">Lagos, Nigeria • Hybrid Work Model</span>
+              <span className="text-sm text-muted-foreground">FCT, Abuja Nigeria • Hybrid Work Model</span>
             </div>
           </div>
           

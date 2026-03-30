@@ -62,20 +62,44 @@ const ContactForm = () => {
     setIsSubmitting(true)
     setSubmitStatus('idle')
     
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      console.log('Form submitted:', formData)
-      setSubmitStatus('success')
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        subject: '',
-        message: '',
+      // FormSubmit.co integration with styled HTML
+      const response = await fetch('https://formsubmit.co/ajax/info.nexentrixltd@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          '� NEXENTRIX': '━━━━━━━━━━━━━━━━',
+          '📋 Form Type': '💼 Contact Form Submission',
+          '👤 Full Name': formData.name,
+          '📧 Email': formData.email,
+          '🏢 Company': formData.company || 'Not provided',
+          '📁 Subject': formData.subject || 'General Inquiry',
+          '💬 Message': formData.message,
+          '🕐 Submitted': new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' }),
+          _subject: `🔶 [Nexentrix Contact] ${formData.subject || 'New Message'} from ${formData.name}`,
+          _template: 'table',
+          _captcha: 'false'
+        })
       })
-      setTimeout(() => setSubmitStatus('idle'), 5000)
-    } catch {
+      
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          subject: '',
+          message: '',
+        })
+        setTimeout(() => setSubmitStatus('idle'), 5000)
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
       setSubmitStatus('error')
       setTimeout(() => setSubmitStatus('idle'), 5000)
     } finally {

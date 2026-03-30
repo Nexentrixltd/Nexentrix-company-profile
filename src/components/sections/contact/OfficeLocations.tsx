@@ -3,40 +3,13 @@ import { Clock, Phone, Mail, Building } from 'lucide-react'
 
 const offices = [
   {
-    city: 'Lagos, Nigeria',
-    address: '123 AI Avenue, Victoria Island',
+    city: 'FCT, Abuja Nigeria',
+    address: '123 AI Avenue, Central Business District',
     phone: '+234 123 456 7890',
-    email: 'lagos@nexentrix.com',
+    email: 'info@nexentrix.com',
     hours: 'Mon-Fri: 9am - 6pm',
     image: '🌍',
     isHeadquarters: true,
-  },
-  {
-    city: 'Accra, Ghana',
-    address: '45 Tech Hub, Cantonments',
-    phone: '+233 123 456 789',
-    email: 'accra@nexentrix.com',
-    hours: 'Mon-Fri: 9am - 5pm',
-    image: '🌍',
-    isHeadquarters: false,
-  },
-  {
-    city: 'Nairobi, Kenya',
-    address: '78 Innovation Center, Westlands',
-    phone: '+254 123 456 789',
-    email: 'nairobi@nexentrix.com',
-    hours: 'Mon-Fri: 9am - 5pm',
-    image: '🌍',
-    isHeadquarters: false,
-  },
-  {
-    city: 'Cape Town, South Africa',
-    address: '12 Silicon Street, Gardens',
-    phone: '+27 123 456 789',
-    email: 'capetown@nexentrix.com',
-    hours: 'Mon-Fri: 9am - 5pm',
-    image: '🌍',
-    isHeadquarters: false,
   },
 ]
 
@@ -57,7 +30,7 @@ const OfficeLocations = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 max-w-md mx-auto">
           {offices.map((office, idx) => (
             <div
               key={idx}

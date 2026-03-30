@@ -11,7 +11,7 @@ const testimonials = [
   },
   {
     name: 'Michael Osei',
-    role: 'Founder, Accra AI Lab',
+    role: 'Founder, TechSpace Nigeria',
     content: 'The Academy provided my team with cutting-edge skills. Within 3 months, we built our first production AI model.',
     avatar: 'M',
   },

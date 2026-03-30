@@ -25,6 +25,7 @@ import Error500 from './pages/Error500'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import CookiePolicy from './pages/CookiePolicy'
+import ComingSoon from './pages/ComingSoon'
 import { ArrowUp } from 'lucide-react'
 
 class ErrorBoundary extends React.Component<React.PropsWithChildren<object>, { hasError: boolean }> {
@@ -113,6 +114,7 @@ function App() {
 <Route path="/cookies" element={<CookiePolicy />} />
             <Route path="/500" element={<Error500 />} />
             <Route path="*" element={<NotFound />} />
+<Route path="/coming-soon" element={<ComingSoon />} />
           </Routes>
         </ErrorBoundary>
 

@@ -26,10 +26,18 @@ interface ArticleData {
   relatedPosts: number[]
 }
 
+interface Comment {
+  id: number
+  name: string
+  date: string
+  content: string
+  avatar: string
+}
+
 // Default comments for all blog posts
 const defaultComments = [
-  { id: 1, name: 'Adaobi Okonkwo', date: 'March 13, 2024', content: 'This is incredibly insightful! I had no idea AI could have such impact on healthcare in Africa.', avatar: 'A' },
-  { id: 2, name: 'Michael Osei', date: 'March 13, 2024', content: 'The results with Lumina AI are impressive. When will it be available in Ghana?', avatar: 'M' },
+  { id: 1, name: 'Adaobi Okonkwo', date: 'March 13, 2026', content: 'This is incredibly insightful! I had no idea AI could have such impact on healthcare in Africa.', avatar: 'A' },
+  { id: 2, name: 'Oluwaseun Adebayo', date: 'March 13, 2026', content: 'The results with Lumina AI are impressive. Looking forward to seeing wider adoption.', avatar: 'O' },
 ]
 
 // Full article data with rich content
@@ -56,7 +64,7 @@ const articlesData: Record<string, ArticleData> = {
       </ul>
       
       <h2>Real-World Impact</h2>
-      <p>Since launching in Lagos, we've partnered with 50+ hospitals and clinics. Here are some results:</p>
+      <p>Since launching in Abuja, we've partnered with 50+ hospitals and clinics. Here are some results:</p>
       <ul>
         <li>Average diagnosis time reduced from 14 days to 4 hours</li>
         <li>Early detection rates increased by 45%</li>
@@ -64,11 +72,11 @@ const articlesData: Record<string, ArticleData> = {
       </ul>
       
       <h2>What's Next</h2>
-      <p>We're expanding to Ghana and Kenya in Q2 2024. Our team is also developing new models for pediatric care and maternal health monitoring.</p>
+      <p>We're continuing to expand our reach across Nigeria. Our team is also developing new models for pediatric care and maternal health monitoring.</p>
       
       <blockquote>
         "Lumina AI has transformed how we practice medicine. What used to take weeks now takes minutes."
-        — Dr. Adebayo Ogunlesi, Chief of Medicine, Lagos University Teaching Hospital
+        — Dr. Adebayo Ogunlesi, Chief of Medicine, National Hospital Abuja
       </blockquote>
       
       <p>Ready to learn more? Contact our team for a demo or visit our <a href="/products">products page</a>.</p>
@@ -79,7 +87,7 @@ const articlesData: Record<string, ArticleData> = {
     authorAvatar: '👩‍⚕️',
     authorBio: 'Dr. Amina Mohammed is the CTO of Nexentrix, leading the development of Lumina AI. She previously led AI research at Google and holds a PhD in Machine Learning from Stanford.',
     authorSocial: { twitter: '#', linkedin: '#', email: 'amina@nexentrix.com' },
-    date: 'March 12, 2024',
+    date: 'March 12, 2026',
     readTime: '6 min read',
     image: '🏥',
     coverImage: '🏥',
@@ -88,7 +96,7 @@ const articlesData: Record<string, ArticleData> = {
   },
   '2': {
     id: 2,
-    title: 'The State of AI Education in Africa: 2024 Report',
+    title: 'The State of AI Education in Africa: 2026 Report',
     excerpt: 'An in-depth look at the growing demand for AI skills and how Nexentrix Academy is bridging the gap.',
     content: `
       <p>Africa is experiencing a digital transformation, and artificial intelligence is at the heart of it. But there's a critical gap: the skills needed to build and deploy AI solutions aren't keeping pace with demand.</p>
@@ -105,7 +113,7 @@ const articlesData: Record<string, ArticleData> = {
         <li>Career support and job placement assistance</li>
       </ul>
       
-      <h2>2024 Impact Metrics</h2>
+      <h2>2026 Impact Metrics</h2>
       <ul>
         <li>10,000+ students enrolled across 8 African countries</li>
         <li>85% graduation rate (industry average is 40%)</li>
@@ -114,7 +122,7 @@ const articlesData: Record<string, ArticleData> = {
       </ul>
       
       <h2>Student Success Story</h2>
-      <p>Meet Adaobi, a 24-year-old from Lagos who completed our Machine Learning course. Within three months, she landed a role as an AI Engineer at a leading fintech company. "The Academy gave me the skills and confidence to pursue my dream career," she says.</p>
+      <p>Meet Adaobi, a 24-year-old from Abuja who completed our Machine Learning course. Within three months, she landed a role as an AI Engineer at a leading fintech company. "The Academy gave me the skills and confidence to pursue my dream career," she says.</p>
       
       <h2>Looking Ahead</h2>
       <p>We're launching new courses in Generative AI and Computer Vision this quarter. We're also expanding our scholarship program to reach 500 underserved students across Africa.</p>
@@ -127,7 +135,7 @@ const articlesData: Record<string, ArticleData> = {
     authorAvatar: '👨‍🏫',
     authorBio: 'Kofi Mensah leads product development at Nexentrix Academy. He has 8 years of experience in edtech and previously built learning platforms for universities across West Africa.',
     authorSocial: { twitter: '#', linkedin: '#', email: 'kofi@nexentrix.com' },
-    date: 'March 10, 2024',
+    date: 'March 10, 2026',
     readTime: '10 min read',
     image: '📚',
     coverImage: '📚',
@@ -173,7 +181,7 @@ const articlesData: Record<string, ArticleData> = {
     authorAvatar: '👨‍💻',
     authorBio: 'Dr. Oluwaseun Adekunle is the founder and CEO of Nexentrix. He holds a PhD in AI Ethics from Oxford and has published extensively on responsible AI development.',
     authorSocial: { twitter: '#', linkedin: '#', email: 'seun@nexentrix.com' },
-    date: 'March 8, 2024',
+    date: 'March 8, 2026',
     readTime: '7 min read',
     image: '⚖️',
     coverImage: '⚖️',
@@ -188,9 +196,9 @@ const articlesData: Record<string, ArticleData> = {
       <p>Career transitions into tech can seem daunting, especially in emerging fields like artificial intelligence. But with the right guidance, determination, and practical training, anyone can make the leap. Today, we're sharing Adaobi Nwankwo's inspiring journey from teaching to AI engineering.</p>
       
       <h2>The Starting Point</h2>
-      <p>Just 18 months ago, Adaobi was a high school biology teacher in Lagos with no coding experience. "I loved teaching, but I felt stuck," she recalls. "I wanted to be part of the technology revolution happening around me, but didn't know where to start."</p>
+      <p>Just 18 months ago, Adaobi was a high school biology teacher in Abuja with no coding experience. "I loved teaching, but I felt stuck," she recalls. "I wanted to be part of the technology revolution happening around me, but didn't know where to start."</p>
       
-      <p>After researching various tech careers, Adaobi decided to pursue AI. "AI seemed like the perfect blend of problem-solving, creativity, and impact," she says. Despite doubts about whether she could learn complex programming and math concepts, she enrolled in Nexentrix Academy in September 2023.</p>
+      <p>After researching various tech careers, Adaobi decided to pursue AI. "AI seemed like the perfect blend of problem-solving, creativity, and impact," she says. Despite doubts about whether she could learn complex programming and math concepts, she enrolled in Nexentrix Academy in January 2026.</p>
       
       <h2>The Learning Journey</h2>
       <p>Adaobi's first three months were challenging. "Learning Python while trying to understand machine learning concepts was overwhelming," she admits. Our curriculum starts with fundamentals—Python programming, mathematics for ML, and data analysis—before diving into advanced topics.</p>
@@ -209,7 +217,7 @@ const articlesData: Record<string, ArticleData> = {
       <p>"Each project taught me something new and built my confidence," Adaobi explains. "More importantly, they gave me concrete examples to discuss in interviews."</p>
       
       <h2>Landing the Job</h2>
-      <p>In June 2024, Adaobi applied for an AI Engineer position at a Lagos-based fintech startup. The interview process was rigorous—two technical assessments, a take-home project, and three rounds of interviews.</p>
+      <p>In March 2026, Adaobi applied for an AI Engineer position at an Abuja-based fintech startup. The interview process was rigorous—two technical assessments, a take-home project, and three rounds of interviews.</p>
       
       <p>"I was nervous, but my portfolio projects gave me credibility," she says. "When they asked about handling imbalanced datasets, I could reference my loan default predictor project. When they asked about model deployment, I could discuss how I deployed my crop disease app."</p>
       
@@ -236,7 +244,7 @@ const articlesData: Record<string, ArticleData> = {
     authorAvatar: '👩‍🎓',
     authorBio: 'Ngozi Okonkwo manages the Nexentrix community, connecting students, alumni, and industry partners. She previously worked in developer relations at several African tech startups.',
     authorSocial: { twitter: '#', linkedin: '#', email: 'ngozi@nexentrix.com' },
-    date: 'March 5, 2024',
+    date: 'March 5, 2026',
     readTime: '5 min read',
     image: '🌟',
     coverImage: '🌟',
@@ -245,10 +253,10 @@ const articlesData: Record<string, ArticleData> = {
   },
   '5': {
     id: 5,
-    title: 'Top 5 AI Trends to Watch in 2024',
+    title: 'Top 5 AI Trends to Watch in 2026',
     excerpt: 'From generative AI to edge computing, discover the trends that will shape the industry this year.',
     content: `
-      <p>The AI landscape is evolving at an unprecedented pace. Technologies that seemed futuristic last year are now mainstream, while new innovations emerge daily. As we progress through 2024, five major trends are reshaping how we think about and deploy artificial intelligence. Here's what every AI practitioner, business leader, and tech enthusiast should be watching.</p>
+      <p>The AI landscape is evolving at an unprecedented pace. Technologies that seemed futuristic last year are now mainstream, while new innovations emerge daily. As we progress through 2026, five major trends are reshaping how we think about and deploy artificial intelligence. Here's what every AI practitioner, business leader, and tech enthusiast should be watching.</p>
       
       <h2>1. Multimodal AI Goes Mainstream</h2>
       <p>AI models that can understand and generate multiple types of content—text, images, audio, video—simultaneously are becoming the norm rather than the exception. GPT-4 with vision, Google's Gemini, and Meta's ImageBind represent this shift toward truly multimodal AI.</p>
@@ -292,12 +300,12 @@ const articlesData: Record<string, ArticleData> = {
       <p>This is accelerating Africa's software development capabilities, allowing developers to build more sophisticated applications faster.</p>
       
       <h2>5. AI Regulation and Governance Frameworks</h2>
-      <p>2024 is seeing a surge in AI regulation globally. The EU AI Act, US Executive Order on AI, and China's AI regulations are setting precedents. While comprehensive AI legislation is still emerging in most African countries, progress is happening:</p>
+      <p>2026 is seeing a surge in AI regulation globally. The EU AI Act, US Executive Order on AI, and China's AI regulations are setting precedents. While comprehensive AI legislation is still emerging in most African countries, progress is happening:</p>
       <ul>
-        <li>Kenya establishing an AI task force</li>
-        <li>Nigeria drafting AI ethics guidelines</li>
-        <li>South Africa leading discussions on AI governance in SADC region</li>
-        <li>Rwanda developing AI-focused technology policies</li>
+        <li>African nations establishing AI task forces</li>
+        <li>Nigeria drafting comprehensive AI ethics guidelines</li>
+        <li>Regional discussions on AI governance frameworks</li>
+        <li>African countries developing AI-focused technology policies</li>
       </ul>
       
       <p>Organizations should prepare by establishing internal AI ethics committees, conducting algorithmic impact assessments, implementing transparency measures, and building audit trails for AI decisions.</p>
@@ -315,7 +323,7 @@ const articlesData: Record<string, ArticleData> = {
     authorAvatar: '📊',
     authorBio: 'Michael Osei leads AI research at Nexentrix, focusing on practical applications of cutting-edge AI technologies. He holds a PhD in Machine Learning from Cambridge and has published papers at NeurIPS and ICML.',
     authorSocial: { twitter: '#', linkedin: '#', email: 'michael@nexentrix.com' },
-    date: 'March 3, 2024',
+    date: 'March 3, 2026',
     readTime: '8 min read',
     image: '📈',
     coverImage: '📈',
@@ -426,9 +434,9 @@ const articlesData: Record<string, ArticleData> = {
     author: 'Prof. Amina Mohammed',
     authorRole: 'Academic Director',
     authorAvatar: '👩‍🏫',
-    authorBio: 'Prof. Amina Mohammed directs academic programs at Nexentrix Academy. She previously taught CS at University of Lagos and has mentored over 500 students into tech careers.',
+    authorBio: 'Prof. Amina Mohammed directs academic programs at Nexentrix Academy. She previously taught CS at University of Abuja and has mentored over 500 students into tech careers.',
     authorSocial: { twitter: '#', linkedin: '#', email: 'prof.amina@nexentrix.com' },
-    date: 'February 28, 2024',
+    date: 'February 28, 2026',
     readTime: '12 min read',
     image: '🚀',
     coverImage: '🚀',
@@ -498,21 +506,21 @@ const articlesData: Record<string, ArticleData> = {
       <p>We're licensed and regulated by financial authorities in each country we operate. Your money and data are protected to the highest standards.</p>
       
       <h2>Real Impact</h2>
-      <p>Since launching in September 2023, the platform's growth has exceeded our expectations:</p>
+      <p>Since launching in January 2026, the platform's growth has exceeded our expectations:</p>
       <ul>
-        <li><strong>150,000+ active users</strong> across Nigeria, Kenya, Ghana, South Africa, and beyond</li>
+        <li><strong>150,000+ active users</strong> across Nigeria and beyond</li>
         <li><strong>$8.2 million</strong> in transaction volume processed</li>
         <li><strong>98.7% success rate</strong> for transactions (industry average: 93%)</li>
         <li><strong>4.8/5</strong> average user rating on app stores</li>
         <li><strong>3 hours saved</strong> per month on average by users</li>
       </ul>
       
-      <p>"Before Nexentrix Top-Up, I spent an hour each month managing bills across five different platforms," says Chioma, a user from Lagos. "Now it takes me five minutes. The auto top-up feature means I never run out of airtime in the middle of important calls."</p>
+      <p>"Before Nexentrix Top-Up, I spent an hour each month managing bills across five different platforms," says Chioma, a user from Abuja. "Now it takes me five minutes. The auto top-up feature means I never run out of airtime in the middle of important calls."</p>
       
       <h2>What's Coming Next</h2>
       <p>We're continuously expanding based on user feedback:</p>
       <ul>
-        <li>Expanding to 10 more African countries in 2024</li>
+        <li>Expanding to more states across Nigeria in 2026-2027</li>
         <li>Adding tax payments and government fees</li>
         <li>Integrating bill splitting for businesses</li>
         <li>Launching a savings feature for planned purchases</li>
@@ -538,7 +546,7 @@ const articlesData: Record<string, ArticleData> = {
     authorAvatar: '💳',
     authorBio: 'James Kariuki leads product development for Nexentrix Top-Up Platform. He has 10 years of experience in fintech and previously built payment solutions for East African markets.',
     authorSocial: { twitter: '#', linkedin: '#', email: 'james@nexentrix.com' },
-    date: 'February 25, 2024',
+    date: 'February 25, 2026',
     readTime: '5 min read',
     image: '📱',
     coverImage: '📱',
@@ -637,7 +645,7 @@ const articlesData: Record<string, ArticleData> = {
     authorAvatar: '🤝',
     authorBio: 'Dr. Oluwaseun Adekunle is the founder and CEO of Nexentrix. He holds a PhD in AI Ethics from Oxford and has published extensively on responsible AI development and the future of work.',
     authorSocial: { twitter: '#', linkedin: '#', email: 'seun@nexentrix.com' },
-    date: 'February 20, 2024',
+    date: 'February 20, 2026',
     readTime: '6 min read',
     image: '💼',
     coverImage: '💼',
@@ -696,9 +704,9 @@ const articlesData: Record<string, ArticleData> = {
       <p>They've developed rigorous processes for data anonymization, quality control, and bias detection. Every dataset undergoes multiple review stages before use in model training.</p>
       
       <h2>The Diversity Advantage</h2>
-      <p>Our team spans 7 nationalities, with members based in Lagos, Nairobi, Accra, Johannesburg, and remote locations. This diversity isn't just good practice—it's critical for building effective healthcare AI.</p>
+      <p>Our team is based in Abuja, with remote team members contributing from across Nigeria. This diversity of perspectives isn't just good practice—it's critical for building effective healthcare AI.</p>
       
-      <p>"When we train models," explains ML Engineer Thandiwe Nkosi from Johannesburg, "we have team members who understand the context of medical data from different African countries—different disease prevalence, different terminology, different healthcare systems. This local knowledge prevents the biases that plague AI built by homogeneous teams far from deployment contexts."</p>
+      <p>"When we train models," explains ML Engineer Adeola Nwosu from Abuja, "we have team members who understand the context of medical data from different regions—different disease prevalence, different terminology, different healthcare systems. This local knowledge prevents the biases that plague AI built by homogeneous teams far from deployment contexts."</p>
       
       <h2>United by Mission</h2>
       <p>Despite diverse backgrounds and expertise, the team shares a common purpose: making world-class healthcare accessible across Africa. This mission drives late nights debugging edge cases, celebrating when hospitals report lives saved, and constantly pushing to improve.</p>
@@ -718,7 +726,7 @@ const articlesData: Record<string, ArticleData> = {
     authorAvatar: '👥',
     authorBio: 'Adaobi Okonkwo leads communications at Nexentrix, telling the stories of our team, products, and impact. She previously worked in tech journalism and brand communications across West Africa.',
     authorSocial: { twitter: '#', linkedin: '#', email: 'adaobi@nexentrix.com' },
-    date: 'February 15, 2024',
+    date: 'February 15, 2026',
     readTime: '4 min read',
     image: '👨‍💻',
     coverImage: '👨‍💻',
@@ -727,10 +735,10 @@ const articlesData: Record<string, ArticleData> = {
   },
   '10': {
     id: 10,
-    title: 'The Future of AI in Africa: Trends Shaping 2025 and Beyond',
+    title: 'The Future of AI in Africa: Trends Shaping 2027 and Beyond',
     excerpt: 'From healthcare to agriculture, discover how artificial intelligence is transforming the African continent and creating unprecedented opportunities for innovation.',
     content: `
-      <p>As we move through 2024 into 2025, Africa is emerging as one of the most exciting frontiers for AI innovation. The continent is not waiting for global trends; it is shaping them with locally-driven solutions built from real challenges.</p>
+      <p>As we move through 2026 into 2027, Africa is emerging as one of the most exciting frontiers for AI innovation. The continent is not waiting for global trends; it is shaping them with locally-driven solutions built from real challenges.</p>
 
       <h2>1. Health AI That Serves Real Communities</h2>
       <p>AI-powered diagnostics and telehealth are reducing care gaps. In several pilot regions, platforms like Lumina AI have cut diagnosis cycle times by 70% and improved early detection rates for diseases like breast cancer and tuberculosis. More clinics are now using AI to supplement scarce specialist capacity, combining automated insights with physician review.</p>
@@ -742,7 +750,7 @@ const articlesData: Record<string, ArticleData> = {
       <p>AI-driven credit scoring for informal workers is unlocking access to loans, while Top-Up platforms are simplifying cross-border payments. Machine learning is detecting fraud in real time and providing personalized budgeting guidance to millions of users.</p>
 
       <h2>4. Vocational AI Education at Scale</h2>
-      <p>Nexentrix Academy and similar edtech platforms are using adaptive learning paths to close the skills gap. In 2024, pass rates for AI certification programs improved by 40% thanks to on-demand AI tutoring and localized curriculum for African students.</p>
+      <p>Nexentrix Academy and similar edtech platforms are using adaptive learning paths to close the skills gap. In 2026, pass rates for AI certification programs have improved significantly thanks to on-demand AI tutoring and localized curriculum for Nigerian students.</p>
 
       <h2>5. Sustainable Development with AI</h2>
       <p>Smart energy grids, waste management optimization, and environmental monitoring are all being boosted by AI. Local startups are combining satellite data and machine learning to track deforestation, predict floods, and enable responsible resource planning.</p>
@@ -751,11 +759,11 @@ const articlesData: Record<string, ArticleData> = {
         "AI’s most transformative power in Africa comes from embedding local context—language, infrastructure, trust—into every system." — Dr. Oluwaseun Adekunle
       </blockquote>
 
-      <h2>What to Watch in 2025</h2>
+      <h2>What to Watch in 2027</h2>
       <ul>
         <li>Multimodal AI products that blend speech, text, and vision to support multiple local languages.</li>
         <li>Edge AI deployments that work offline in remote villages and border communities.</li>
-        <li>Regulatory advances with ethical frameworks in Kenya, Nigeria, and South Africa.</li>
+        <li>Regulatory advances with ethical frameworks across Nigeria and the West African region.</li>
         <li>Local AI data ecosystems that prioritize privacy, sovereignty, and shared value.</li>
       </ul>
 
@@ -770,7 +778,7 @@ const articlesData: Record<string, ArticleData> = {
     authorAvatar: '🌍',
     authorBio: 'Dr. Oluwaseun Adekunle is the founder and CEO of Nexentrix. He holds a PhD in AI Ethics from Oxford and drives strategy for AI impact in Africa.',
     authorSocial: { twitter: '#', linkedin: '#', email: 'seun@nexentrix.com' },
-    date: 'March 15, 2024',
+    date: 'March 15, 2026',
     readTime: '8 min read',
     image: '🌍',
     coverImage: '🌍',
@@ -846,7 +854,7 @@ const BlogPost = () => {
   const handleComment = (e: React.FormEvent) => {
     e.preventDefault()
     if (comment.trim()) {
-      setComments(prev => [...prev, {
+      setComments((prev: Comment[]) => [...prev, {
         id: prev.length + 1,
         name: 'You',
         date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
@@ -1055,7 +1063,7 @@ const BlogPost = () => {
               
               {/* Comments List */}
               <div className="space-y-4">
-                {comments.map((comment) => (
+                {comments.map((comment: Comment) => (
                   <div key={comment.id} className="flex gap-3">
                     <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-sm">
                       {comment.avatar}

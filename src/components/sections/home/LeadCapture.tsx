@@ -5,15 +5,53 @@ import { useState } from 'react'
 const LeadCapture = () => {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (email) {
-      // Handle email submission
-      console.log('Email submitted:', email)
-      setSubmitted(true)
-      setEmail('')
-      setTimeout(() => setSubmitted(false), 3000)
+    
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError(true)
+      setTimeout(() => setError(false), 3000)
+      return
+    }
+    
+    setIsSubmitting(true)
+    
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/info.nexentrixltd@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          '� NEXENTRIX LEAD CAPTURE': '━━━━━━━━━━━━━━━━',
+          '📋 Form Type': '🚀 Lead Capture',
+          '📧 Lead Email': email,
+          '📍 Source': 'Home Page - "Join the Future of AI" Section',
+          '💡 Lead Quality': 'High-intent lead interested in AI solutions and early access',
+          '🕐 Captured': new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' }),
+          _subject: '🔶 [Nexentrix Lead] New Home Page Subscriber',
+          _template: 'table',
+          _captcha: 'false'
+        })
+      })
+      
+      if (response.ok) {
+        setSubmitted(true)
+        setEmail('')
+        setTimeout(() => setSubmitted(false), 5000)
+      } else {
+        throw new Error('Submission failed')
+      }
+    } catch (err) {
+      console.error('Lead capture error:', err)
+      setError(true)
+      setTimeout(() => setError(false), 3000)
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -40,20 +78,37 @@ const LeadCapture = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                disabled={isSubmitting}
                 required
               />
               <button
                 type="submit"
-                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105"
+                disabled={isSubmitting}
+                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Subscribe
-                <Send className="ml-2 h-4 w-4" />
+                {isSubmitting ? (
+                  <>
+                    <div className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                    Subscribing...
+                  </>
+                ) : (
+                  <>
+                    Subscribe
+                    <Send className="ml-2 h-4 w-4" />
+                  </>
+                )}
               </button>
             </form>
             
             {submitted && (
               <p className="mt-4 text-sm text-green-500 animate-fade-in">
-                Thanks for subscribing! Check your email for updates.
+                ✓ Thanks for subscribing! Check your email for updates.
+              </p>
+            )}
+            
+            {error && (
+              <p className="mt-4 text-sm text-red-500 animate-fade-in">
+                ✕ Please enter a valid email address.
               </p>
             )}
             

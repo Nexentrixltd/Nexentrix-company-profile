@@ -6,7 +6,7 @@ interface Job {
   id: number
   title: string
   department: 'Engineering' | 'Product' | 'Sales' | 'Marketing' | 'Operations' | 'Education'
-  location: 'Lagos' | 'Accra' | 'Nairobi' | 'Remote'
+  location: 'Abuja' | 'Remote'
   type: 'Full-time' | 'Part-time' | 'Contract' | 'Internship'
   experience: 'Entry' | 'Mid' | 'Senior' | 'Lead'
   description: string
@@ -18,11 +18,11 @@ const jobs: Job[] = [
     id: 1,
     title: 'Senior AI Engineer',
     department: 'Engineering',
-    location: 'Lagos',
+    location: 'Abuja',
     type: 'Full-time',
     experience: 'Senior',
     description: 'Lead development of AI models for Lumina AI healthcare platform. Experience with TensorFlow, PyTorch, and production ML systems required.',
-    postedDate: '2024-03-15',
+    postedDate: '2026-03-15',
   },
   {
     id: 2,
@@ -32,17 +32,17 @@ const jobs: Job[] = [
     type: 'Full-time',
     experience: 'Mid',
     description: 'Build and deploy ML models for various AI solutions. Strong Python skills and experience with scikit-learn required.',
-    postedDate: '2024-03-12',
+    postedDate: '2026-03-12',
   },
   {
     id: 3,
     title: 'Product Manager - Lumina AI',
     department: 'Product',
-    location: 'Lagos',
+    location: 'Abuja',
     type: 'Full-time',
     experience: 'Senior',
     description: 'Drive product strategy for our healthcare AI platform. Experience with B2B SaaS and healthcare tech preferred.',
-    postedDate: '2024-03-10',
+    postedDate: '2026-03-10',
   },
   {
     id: 4,
@@ -52,27 +52,27 @@ const jobs: Job[] = [
     type: 'Full-time',
     experience: 'Mid',
     description: 'Build beautiful, responsive interfaces for our products. Expertise in React, TypeScript, and Tailwind CSS required.',
-    postedDate: '2024-03-08',
+    postedDate: '2026-03-08',
   },
   {
     id: 5,
     title: 'AI Curriculum Developer',
     department: 'Education',
-    location: 'Accra',
+    location: 'Abuja',
     type: 'Full-time',
     experience: 'Mid',
     description: 'Create engaging AI courses for Nexentrix Academy. Strong background in AI/ML and curriculum design.',
-    postedDate: '2024-03-05',
+    postedDate: '2026-03-05',
   },
   {
     id: 6,
     title: 'Sales Development Representative',
     department: 'Sales',
-    location: 'Nairobi',
+    location: 'Abuja',
     type: 'Full-time',
     experience: 'Entry',
     description: 'Generate leads and qualify opportunities for enterprise sales. Excellent communication skills required.',
-    postedDate: '2024-03-01',
+    postedDate: '2026-03-01',
   },
   {
     id: 7,
@@ -82,17 +82,17 @@ const jobs: Job[] = [
     type: 'Full-time',
     experience: 'Senior',
     description: 'Lead marketing strategy and campaigns. Experience with B2B tech marketing and content strategy.',
-    postedDate: '2024-02-28',
+    postedDate: '2026-02-28',
   },
   {
     id: 8,
     title: 'DevOps Engineer',
     department: 'Engineering',
-    location: 'Lagos',
+    location: 'Abuja',
     type: 'Full-time',
     experience: 'Senior',
     description: 'Manage cloud infrastructure and CI/CD pipelines. AWS, Kubernetes, and Terraform expertise required.',
-    postedDate: '2024-02-25',
+    postedDate: '2026-02-25',
   },
   {
     id: 9,
@@ -102,12 +102,12 @@ const jobs: Job[] = [
     type: 'Contract',
     experience: 'Mid',
     description: 'Create documentation and technical content for our products. Strong writing skills and tech background.',
-    postedDate: '2024-02-20',
+    postedDate: '2026-02-20',
   },
 ]
 
 const departments = ['All', 'Engineering', 'Product', 'Sales', 'Marketing', 'Operations', 'Education']
-const locations = ['All', 'Lagos', 'Accra', 'Nairobi', 'Remote']
+const locations = ['All', 'Abuja', 'Remote']
 const experienceLevels = ['All', 'Entry', 'Mid', 'Senior', 'Lead']
 
 const OpenPositions = () => {
@@ -116,6 +116,134 @@ const OpenPositions = () => {
   const [selectedExperience, setSelectedExperience] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedJob, setSelectedJob] = useState<Job | null>(null)
+  
+  // Application form state
+  const [applicationData, setApplicationData] = useState({
+    fullName: '',
+    email: '',
+    linkedin: '',
+    coverLetter: '',
+  })
+  const [resume, setResume] = useState<File | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleApplicationChange = (field: string, value: string) => {
+    setApplicationData(prev => ({ ...prev, [field]: value }))
+  }
+
+  const handleResumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      // Check file size (2MB max for email delivery)
+      if (file.size > 2 * 1024 * 1024) {
+        alert('File size must be less than 2MB for email delivery. Please compress your resume or use a smaller file.')
+        return
+      }
+      // Check file type
+      const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
+      if (!allowedTypes.includes(file.type)) {
+        alert('Please upload PDF, DOC, or DOCX files only')
+        return
+      }
+      setResume(file)
+    }
+  }
+
+  const validateApplication = (): boolean => {
+    if (!applicationData.fullName.trim()) {
+      alert('Please enter your full name')
+      return false
+    }
+    if (!applicationData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(applicationData.email)) {
+      alert('Please enter a valid email address')
+      return false
+    }
+    if (!resume) {
+      alert('Please upload your resume')
+      return false
+    }
+    return true
+  }
+
+  const handleApplicationSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!validateApplication() || !selectedJob) {
+      return
+    }
+    
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    
+    try {
+      const fileSizeKB = Math.round(resume!.size / 1024)
+      
+      const response = await fetch('https://formsubmit.co/ajax/info.nexentrixltd@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          '� NEXENTRIX CAREERS': '━━━━━━━━━━━━━━━━',
+          '📋 Form Type': '💼 Career Application',
+          '🎯 Position': selectedJob.title,
+          '🏢 Department': selectedJob.department,
+          '📍 Location': selectedJob.location,
+          '⏰ Job Type': selectedJob.type,
+          '---': '---',
+          '👤 Applicant Name': applicationData.fullName,
+          '📧 Email': applicationData.email,
+          '🔗 LinkedIn': applicationData.linkedin || 'Not provided',
+          '📄 Resume File': `${resume!.name} (${fileSizeKB} KB)`,
+          '⚠️ Note': 'Request full resume during interview',
+          '✍️ Cover Letter': applicationData.coverLetter || 'No cover letter provided',
+          '🕐 Applied': new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' }),
+          _subject: `🔶 [Nexentrix Careers] Application for ${selectedJob.title}`,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      })
+      
+      if (response.ok) {
+        setSubmitStatus('success')
+        // Reset form
+        setApplicationData({
+          fullName: '',
+          email: '',
+          linkedin: '',
+          coverLetter: '',
+        })
+        setResume(null)
+        // Close modal after 2 seconds
+        setTimeout(() => {
+          setSelectedJob(null)
+          setSubmitStatus('idle')
+        }, 2000)
+      } else {
+        throw new Error('Failed to submit application')
+      }
+    } catch (error) {
+      console.error('Application submission error:', error)
+      setSubmitStatus('error')
+      setTimeout(() => setSubmitStatus('idle'), 5000)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const closeModal = () => {
+    setSelectedJob(null)
+    setApplicationData({
+      fullName: '',
+      email: '',
+      linkedin: '',
+      coverLetter: '',
+    })
+    setResume(null)
+    setSubmitStatus('idle')
+  }
 
   const filteredJobs = jobs.filter(job => {
     const matchesDepartment = selectedDepartment === 'All' || job.department === selectedDepartment
@@ -263,7 +391,7 @@ const OpenPositions = () => {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
             <div className="relative max-w-lg w-full bg-card rounded-2xl border border-border p-6 max-h-[90vh] overflow-y-auto">
               <button
-                onClick={() => setSelectedJob(null)}
+                onClick={closeModal}
                 className="absolute top-4 right-4 p-1 rounded-lg hover:bg-secondary"
               >
                 ✕
@@ -277,30 +405,94 @@ const OpenPositions = () => {
               </div>
               <p className="text-muted-foreground mb-6">{selectedJob.description}</p>
               
-              <form className="space-y-4">
+              {submitStatus === 'success' && (
+                <div className="mb-4 p-3 rounded-lg bg-green-500/10 border border-green-500/20 text-green-500 text-sm">
+                  ✓ Application submitted successfully! We'll review it and get back to you soon.
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-500 text-sm">
+                  ✕ Failed to submit application. Please try again.
+                </div>
+              )}
+              
+              <form onSubmit={handleApplicationSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium mb-1">Full Name *</label>
-                  <input id="applicant-name" type="text" placeholder="Full Name" aria-label="Full Name" className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary" />
+                  <input 
+                    type="text" 
+                    placeholder="Full Name" 
+                    aria-label="Full Name" 
+                    value={applicationData.fullName}
+                    onChange={(e) => handleApplicationChange('fullName', e.target.value)}
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50" 
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Email Address *</label>
-                  <input id="applicant-email" type="email" placeholder="Email Address" aria-label="Email Address" className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary" />
+                  <input 
+                    type="email" 
+                    placeholder="Email Address" 
+                    aria-label="Email Address" 
+                    value={applicationData.email}
+                    onChange={(e) => handleApplicationChange('email', e.target.value)}
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50" 
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">LinkedIn Profile</label>
-                  <input id="linkedin-url" type="url" placeholder="LinkedIn Profile" aria-label="LinkedIn Profile" className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary" />
+                  <input 
+                    type="url" 
+                    placeholder="https://linkedin.com/in/yourprofile" 
+                    aria-label="LinkedIn Profile" 
+                    value={applicationData.linkedin}
+                    onChange={(e) => handleApplicationChange('linkedin', e.target.value)}
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50" 
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Resume/CV *</label>
-                  <input id="resume-upload" type="file" aria-label="Resume upload" className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary" />
-                  <p className="text-xs text-muted-foreground mt-1">PDF, DOC, or DOCX (max 5MB)</p>
+                  <input 
+                    type="file" 
+                    accept=".pdf,.doc,.docx"
+                    aria-label="Resume upload" 
+                    onChange={handleResumeChange}
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50" 
+                  />
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {resume ? `Selected: ${resume.name} (${Math.round(resume.size / 1024)} KB)` : 'PDF, DOC, or DOCX (max 2MB)'}
+                  </p>
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Cover Letter</label>
-                  <textarea id="cover-letter" rows={4} placeholder="Cover Letter" aria-label="Cover Letter" className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary" />
+                  <textarea 
+                    rows={4} 
+                    placeholder="Tell us why you're interested in this role..." 
+                    aria-label="Cover Letter" 
+                    value={applicationData.coverLetter}
+                    onChange={(e) => handleApplicationChange('coverLetter', e.target.value)}
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-2 rounded-lg bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50" 
+                  />
                 </div>
-                <button type="submit" className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all">
-                  Submit Application
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <span className="animate-spin">⏳</span>
+                      Submitting...
+                    </>
+                  ) : (
+                    'Submit Application'
+                  )}
                 </button>
               </form>
             </div>

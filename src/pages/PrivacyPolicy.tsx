@@ -5,7 +5,7 @@ import { Shield, Eye, Database, Mail, FileText, Clock, Globe, Lock, Server, User
 import { useState } from 'react'
 
 const PrivacyPolicy = () => {
-  const [lastUpdated] = useState('March 25, 2024')
+  const [lastUpdated] = useState('March 25, 2026')
 
   const sections = [
     { id: 'introduction', title: 'Introduction' },
@@ -298,8 +298,8 @@ const PrivacyPolicy = () => {
                 </p>
                 <ul>
                   <li><strong>Email:</strong> <a href="mailto:privacy@nexentrix.com" className="text-primary">privacy@nexentrix.com</a></li>
-                  <li><strong>Phone:</strong> +234 123 456 7890</li>
-                  <li><strong>Address:</strong> 123 AI Avenue, Victoria Island, Lagos, Nigeria</li>
+                  <li><strong>Phone:</strong> +234(0)9110468788</li>
+                  <li><strong>Address:</strong> 123 AI Avenue, Central Business District, FCT, Abuja Nigeria</li>
                 </ul>
               </div>
             </section>

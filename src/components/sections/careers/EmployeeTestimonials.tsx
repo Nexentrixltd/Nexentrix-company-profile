@@ -8,7 +8,7 @@ const testimonials = [
     role: 'Senior AI Engineer',
     image: '👩‍💻',
     content: 'Working at Nexentrix has been transformative. The culture of innovation and collaboration is unmatched, and I\'m proud to be building solutions that actually make a difference in people\'s lives.',
-    joined: '2022',
+    joined: '2026',
     quote: 'The best place I\'ve ever worked',
   },
   {
@@ -16,7 +16,7 @@ const testimonials = [
     role: 'Product Manager',
     image: '👨‍💼',
     content: 'The autonomy and trust we have here is incredible. Everyone is empowered to take ownership and make decisions. It\'s rare to find a place where you can grow this fast.',
-    joined: '2023',
+    joined: '2026',
     quote: 'Growth opportunities are endless',
   },
   {
@@ -24,7 +24,7 @@ const testimonials = [
     role: 'Head of Education',
     image: '👩‍🏫',
     content: 'Seeing the impact of Nexentrix Academy on students across Africa is what gets me excited to come to work every day. The mission-driven culture here is real.',
-    joined: '2022',
+    joined: '2026',
     quote: 'Mission-driven and impactful',
   },
   {
@@ -32,7 +32,7 @@ const testimonials = [
     role: 'Sales Lead',
     image: '👨‍💻',
     content: 'From day one, I felt welcomed and valued. The support from leadership and colleagues has been incredible. It\'s a place where you can truly be yourself.',
-    joined: '2023',
+    joined: '2026',
     quote: 'Supportive and inclusive',
   },
 ]

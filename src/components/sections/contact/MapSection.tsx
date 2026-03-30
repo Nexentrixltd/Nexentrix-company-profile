@@ -13,7 +13,7 @@ const MapSection = () => {
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-2">Find Us</h2>
           <p className="text-muted-foreground">
-            Visit our headquarters in Lagos, Nigeria
+            Visit our headquarters in FCT, Abuja Nigeria
           </p>
         </div>
         
@@ -23,7 +23,7 @@ const MapSection = () => {
             <div className="text-center">
               <MapPin className="h-12 w-12 text-primary mx-auto mb-3" />
               <h3 className="text-xl font-semibold mb-2">Nexentrix Headquarters</h3>
-              <p className="text-muted-foreground">123 AI Avenue, Victoria Island, Lagos, Nigeria</p>
+              <p className="text-muted-foreground">123 AI Avenue, Central Business District, FCT, Abuja Nigeria</p>
               <p className="text-sm text-muted-foreground mt-2">
                 📍 Interactive map integration coming soon
               </p>
@@ -35,7 +35,7 @@ const MapSection = () => {
                   Contact Us
                 </button>
                 <a 
-                  href="https://maps.google.com/?q=Victoria+Island+Lagos+Nigeria"
+                  href="https://maps.google.com/?q=Central+Business+District+Abuja+Nigeria"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 rounded-lg border border-primary/30 hover:bg-primary/10 transition-all text-sm">

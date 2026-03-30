@@ -22,7 +22,7 @@ const MissionVision = () => {
               <div className="mt-6 pt-6 border-t border-border">
                 <div className="flex items-center gap-2 text-primary">
                   <Rocket className="h-4 w-4" />
-                  <span className="text-sm">Driving innovation since 2022</span>
+                  <span className="text-sm">Driving innovation since 2026</span>
                 </div>
               </div>
             </div>

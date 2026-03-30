@@ -65,7 +65,7 @@ const InternshipProgram = () => {
                 </div>
                 <h3 className="font-semibold">Software Engineering Intern</h3>
               </div>
-              <p className="text-sm text-muted-foreground">Summer 2024 • 12 weeks • Lagos/Remote</p>
+              <p className="text-sm text-muted-foreground">Summer 2026 • 12 weeks • Abuja/Remote</p>
             </div>
             <div className="p-5 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all">
               <div className="flex items-center gap-3 mb-2">
@@ -74,7 +74,7 @@ const InternshipProgram = () => {
                 </div>
                 <h3 className="font-semibold">AI/ML Research Intern</h3>
               </div>
-              <p className="text-sm text-muted-foreground">Fall 2024 • 6 months • Remote</p>
+              <p className="text-sm text-muted-foreground">Fall 2026 • 6 months • Remote</p>
             </div>
             <div className="p-5 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all">
               <div className="flex items-center gap-3 mb-2">
@@ -83,7 +83,7 @@ const InternshipProgram = () => {
                 </div>
                 <h3 className="font-semibold">Product Marketing Intern</h3>
               </div>
-              <p className="text-sm text-muted-foreground">Spring 2024 • 4 months • Nairobi</p>
+              <p className="text-sm text-muted-foreground">Spring 2027 • 4 months • Abuja</p>
             </div>
           </div>
         </div>

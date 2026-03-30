@@ -42,7 +42,7 @@ const CareersHero = () => {
             {[
               { icon: Users, value: '50+', label: 'Team Members', trend: '+200% YoY' },
               { icon: TrendingUp, value: '5+', label: 'Countries', trend: 'Growing' },
-              { icon: Award, value: '12', label: 'Industry Awards', trend: '2024' },
+              { icon: Award, value: '12', label: 'Industry Awards', trend: '2026' },
               { icon: Briefcase, value: '15+', label: 'Open Roles', trend: 'New positions' },
             ].map((stat, idx) => {
               const Icon = stat.icon

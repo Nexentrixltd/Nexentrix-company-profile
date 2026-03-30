@@ -21,7 +21,7 @@ const AboutHero = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto">
-            Founded in 2022, Nexentrix Ltd has grown from a bold vision into a leading 
+            Founded in 2026, Nexentrix Ltd has grown from a bold vision into a leading 
             AI technology company, empowering businesses and individuals across Africa 
             with cutting-edge solutions.
           </p>
@@ -29,7 +29,7 @@ const AboutHero = () => {
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-border">
             {[
-              { icon: Calendar, value: '2022', label: 'Founded' },
+              { icon: Calendar, value: '2026', label: 'Founded' },
               { icon: Users, value: '50+', label: 'Team Members' },
               { icon: Globe, value: '5+', label: 'Countries' },
               { icon: Award, value: '12', label: 'Awards Won' },
