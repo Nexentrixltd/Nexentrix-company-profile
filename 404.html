@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // GitHub Pages SPA redirect
+    const base = '/Nexentrix-company-profile';
+    const path = window.location.pathname;
+    
+    // If we're already at the base path, redirect to index
+    if (path === base || path === base + '/') {
+      window.location.replace(base + '/');
+    } else if (path.startsWith(base)) {
+      // Store the path and redirect to base
+      sessionStorage.setItem('redirectPath', path + window.location.search + window.location.hash);
+      window.location.replace(base + '/');
+    } else {
+      // Not under base path, just go to base
+      window.location.replace(base + '/');
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting to application...</p>
+</body>
+</html>
