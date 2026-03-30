@@ -86,7 +86,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Nexentrix-company-profile">
       <ScrollToTop />
       <div className="min-h-screen bg-background">
         <Navbar theme={theme} onToggleTheme={toggleTheme} />
