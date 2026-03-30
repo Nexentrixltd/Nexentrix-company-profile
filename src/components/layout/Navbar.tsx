@@ -42,7 +42,11 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/NEXIUS FAVICON.png" alt="Nexentrix logo" className="w-8 h-8 object-contain" />
+            <img
+              src={`${import.meta.env.BASE_URL}NEXIUS FAVICON.png`}
+              alt="Nexentrix logo"
+              className="w-8 h-8 object-contain"
+            />
             <span className="text-xl font-bold text-foreground">Nexentrix</span>
           </Link>
 
