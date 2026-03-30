@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/Nexentrix/',
+  base: '/Nexentrix-company-profile/',
   plugins: [react()],
 })
