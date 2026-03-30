@@ -101,14 +101,14 @@ const Navbar = ({ theme, onToggleTheme }: NavbarProps) => {
         <div className="md:hidden bg-background border-b border-border">
           <div className="px-4 pt-2 pb-4 space-y-2">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="block py-2 text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
             <button
               onClick={() => {

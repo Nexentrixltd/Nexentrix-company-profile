@@ -1,4 +1,5 @@
 // src/components/layout/Footer.tsx
+import { Link } from 'react-router-dom'
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa'
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi'
 
@@ -80,10 +81,10 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Products</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="/products#lumina" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Lumina AI</a></li>
-              <li><a href="/academy" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Nexentrix Academy</a></li>
-              <li><a href="/products#topup" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Top-Up Platform</a></li>
-              <li><a href="/products#enterprise" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Enterprise Solutions</a></li>
+              <li><Link to="/products#lumina" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Lumina AI</Link></li>
+              <li><Link to="/academy" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Nexentrix Academy</Link></li>
+              <li><Link to="/products#topup" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Top-Up Platform</Link></li>
+              <li><Link to="/products#enterprise" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Enterprise Solutions</Link></li>
             </ul>
           </div>
           
@@ -91,10 +92,10 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="/about" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">About Us</a></li>
-              <li><a href="/careers" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Careers</a></li>
-              <li><a href="/blog" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Blog</a></li>
-              <li><a href="/academy" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Academy</a></li>
+              <li><Link to="/about" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">About Us</Link></li>
+              <li><Link to="/careers" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Careers</Link></li>
+              <li><Link to="/blog" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Blog</Link></li>
+              <li><Link to="/academy" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Academy</Link></li>
             </ul>
           </div>
           
@@ -133,9 +134,9 @@ const Footer = () => {
             © {currentYear} Nexentrix Ltd. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="/privacy" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Privacy Policy</a>
-            <a href="/terms" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Terms of Service</a>
-            <a href="/cookies" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Cookie Policy</a>
+            <Link to="/privacy" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Privacy Policy</Link>
+            <Link to="/terms" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Terms of Service</Link>
+            <Link to="/cookies" className="text-muted-foreground hover:text-white hover:bg-primary hover:rounded-md hover:px-1 hover:-translate-x-0.5 transition-all">Cookie Policy</Link>
           </div>
         </div>
       </div>
