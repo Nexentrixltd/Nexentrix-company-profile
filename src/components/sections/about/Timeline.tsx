@@ -107,7 +107,7 @@ const Timeline = () => {
                   </div>
                   
                   {/* Card Container */}
-                  <div className={`w-full md:w-[calc(50%-2rem)] ml-12 md:ml-0 ${isEven ? 'md:mr-auto' : 'md:ml-auto'}`}>
+                  <div className={`w-full md:w-[calc(50%-2rem)] px-3 md:px-0 ${isEven ? 'md:mr-auto' : 'md:ml-auto'}`}>
                     <div 
                       className={`
                         group relative cursor-pointer transition-all duration-300
