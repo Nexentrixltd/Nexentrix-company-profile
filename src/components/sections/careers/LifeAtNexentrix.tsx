@@ -89,7 +89,7 @@ const LifeAtNexentrix = () => {
         {/* Culture Video Placeholder */}
         <div className="mt-12 relative rounded-2xl overflow-hidden">
           <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-            <button
+            {/* <button
               onClick={() => setShowVideo(true)}
               className="group flex flex-col items-center gap-3"
             >
@@ -97,7 +97,7 @@ const LifeAtNexentrix = () => {
                 <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-primary border-b-[12px] border-b-transparent ml-1" />
               </div>
               <span className="text-sm text-muted">Watch our culture video</span>
-            </button>
+            </button> */}
           </div>
         </div>
 

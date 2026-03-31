@@ -1,5 +1,5 @@
 // src/components/sections/home/AboutPeek.tsx
-import { Target, Eye,} from 'lucide-react'
+import { Target, Eye, Globe2, Users, BarChart3, Star } from 'lucide-react'
 
 const AboutPeek = () => {
   return (
@@ -47,20 +47,25 @@ const AboutPeek = () => {
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
             <div className="relative grid grid-cols-2 gap-6">
               {[
-                { value: '5+', label: 'Countries', icon: '🌍' },
-                { value: '50+', label: 'Experts', icon: '👥' },
-                { value: '100K+', label: 'Users', icon: '📊' },
-                { value: '98%', label: 'Satisfaction', icon: '⭐' },
-              ].map((stat, idx) => (
-                <div
-                  key={idx}
-                  className="text-center p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all hover:scale-105"
-                >
-                  <div className="text-3xl mb-2">{stat.icon}</div>
-                  <div className="text-2xl md:text-3xl font-bold text-primary">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
+                { value: '5+', label: 'Countries', icon: Globe2 },
+                { value: '50+', label: 'Experts', icon: Users },
+                { value: '100K+', label: 'Users', icon: BarChart3 },
+                { value: '98%', label: 'Satisfaction', icon: Star },
+              ].map((stat, idx) => {
+                const StatsIcon = stat.icon
+                return (
+                  <div
+                    key={idx}
+                    className="text-center p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all hover:scale-105"
+                  >
+                    <div className="text-primary mx-auto mb-2 text-center">
+                      <StatsIcon className="h-7 w-7" />
+                    </div>
+                    <div className="text-2xl md:text-3xl font-bold text-primary">{stat.value}</div>
+                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>

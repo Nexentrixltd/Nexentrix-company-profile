@@ -305,23 +305,26 @@ const ContactForm = () => {
               <div className="p-6 rounded-2xl bg-card border border-border">
                 <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
                 <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { name: 'LinkedIn', icon: 'in', color: 'bg-blue-600' },
-                    { name: 'Twitter', icon: '🐦', color: 'bg-sky-500' },
-                    { name: 'Instagram', icon: '📸', color: 'bg-pink-600' },
-                    { name: 'Facebook', icon: '📘', color: 'bg-blue-800' },
-                    { name: 'YouTube', icon: '▶️', color: 'bg-red-600' },
-                    { name: 'Discord', icon: '💬', color: 'bg-indigo-600' },
-                  ].map((social, idx) => (
-                    <a
-                      key={idx}
-                      href="#"
-                      className="flex items-center gap-2 p-2 rounded-lg bg-secondary hover:bg-primary/10 transition-colors"
-                    >
-                      <span className="text-sm">{social.icon}</span>
-                      <span className="text-sm">{social.name}</span>
-                    </a>
-                  ))}
+                  {
+                    [
+                      { name: 'LinkedIn', icon: 'in', url: 'https://linkedin.com/company/nexentrix', color: 'bg-blue-600' },
+                      { name: 'Twitter', icon: '🐦', url: 'https://x.com/nexentrix', color: 'bg-sky-500' },
+                      { name: 'Instagram', icon: '📸', url: 'https://www.instagram.com/nexentrix.ltd?igsh=bGZpdHdsOGtsYW5t', color: 'bg-pink-600' },
+                      { name: 'Facebook', icon: '📘', url: 'https://www.facebook.com/share/1KAPY3koe9/', color: 'bg-blue-800' },
+                      { name: 'YouTube', icon: '▶️', url: 'https://www.youtube.com/@Nexentrixltd', color: 'bg-red-600' },
+                    ].map((social, idx) => (
+                      <a
+                        key={idx}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 p-2 rounded-lg bg-secondary hover:bg-primary/10 transition-colors"
+                      >
+                        <span className="text-sm">{social.icon}</span>
+                        <span className="text-sm">{social.name}</span>
+                      </a>
+                    ))
+                  }
                 </div>
               </div>
               

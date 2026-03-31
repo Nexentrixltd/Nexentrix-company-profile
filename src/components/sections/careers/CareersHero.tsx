@@ -1,6 +1,6 @@
 // src/components/sections/careers/CareersHero.tsx
 import { useState } from 'react'
-import { Briefcase, Users, TrendingUp, Award, ArrowRight, Play } from 'lucide-react'
+import { Briefcase, Users, TrendingUp, Award, ArrowRight } from 'lucide-react'
 import VideoModal from '../../ui/VideoModal'
 
 const CareersHero = () => {
@@ -66,13 +66,13 @@ const CareersHero = () => {
               View Open Positions
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button
+            {/* <button
               onClick={() => setShowVideo(true)}
               className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all"
             >
               <Play className="h-4 w-4" />
               Watch Culture Video
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

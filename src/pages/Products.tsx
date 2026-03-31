@@ -7,7 +7,7 @@ import AcademySpotlight from '../components/sections/products/AcademySpotlight'
 import TopUpSpotlight from '../components/sections/products/TopUpSpotlight'
 import ComparisonTable from '../components/sections/products/ComparisonTable'
 import IntegrationSection from '../components/sections/products/IntegrationSection'
-import PricingTiers from '../components/sections/products/PricingTiers'
+// import PricingTiers from '../components/sections/products/PricingTiers'
 import ProductCTA from '../components/sections/products/ProductCTA'
 
 const Products = () => {
@@ -35,9 +35,9 @@ const Products = () => {
         <section id="integrations" data-shape="cloth">
           <IntegrationSection />
         </section>
-        <section id="pricing" data-shape="cone">
+        {/* <section id="pricing" data-shape="cone">
           <PricingTiers />
-        </section>
+        </section> */}
         <section id="product-cta" data-shape="spiral">
           <ProductCTA />
         </section>

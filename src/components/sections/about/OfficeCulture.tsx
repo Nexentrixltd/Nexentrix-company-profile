@@ -40,6 +40,15 @@ const OfficeCulture = () => {
               Our Abuja HQ is designed to foster creativity and collaboration.
             </p>
             
+            <div className="flex items-center gap-2 pt-4">
+              <MapPin className="h-4 w-4 text-primary" />
+              <span className="text-sm text-muted-foreground">FCT, Abuja Nigeria • Hybrid Work Model</span>
+            </div>
+          </div>
+          
+          {/* Right Side - Gallery Grid */}
+          <div className="gap-4">
+            
             <div className="space-y-4">
               {cultureHighlights.map((item, idx) => {
                 const Icon = item.icon
@@ -53,31 +62,6 @@ const OfficeCulture = () => {
                   </div>
                 )
               })}
-            </div>
-            
-            <div className="flex items-center gap-2 pt-4">
-              <MapPin className="h-4 w-4 text-primary" />
-              <span className="text-sm text-muted-foreground">FCT, Abuja Nigeria • Hybrid Work Model</span>
-            </div>
-          </div>
-          
-          {/* Right Side - Gallery Grid */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-4">
-              <div className="h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-primary/20">
-                <span className="text-4xl">🏢</span>
-              </div>
-              <div className="h-32 rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center border border-primary/20">
-                <span className="text-3xl">💻</span>
-              </div>
-            </div>
-            <div className="space-y-4 pt-8">
-              <div className="h-32 rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center border border-primary/20">
-                <span className="text-3xl">🎉</span>
-              </div>
-              <div className="h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-primary/20">
-                <span className="text-4xl">🤝</span>
-              </div>
             </div>
           </div>
         </div>

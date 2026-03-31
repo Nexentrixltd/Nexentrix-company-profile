@@ -295,11 +295,11 @@ const WebinarRegistration = () => {
                   <div className="text-sm text-muted-foreground mb-4">
                     Duration: {webinar.duration}
                   </div>
-                  <button 
+                  {/* <button 
                     onClick={() => navigate('/contact')}
                     className="w-full px-4 py-2 border border-border rounded-lg hover:bg-secondary transition-all text-sm font-medium">
                     Watch Recording
-                  </button>
+                  </button> */}
                 </div>
               ))}
             </div>

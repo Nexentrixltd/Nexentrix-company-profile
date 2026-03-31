@@ -1,7 +1,7 @@
 // src/components/sections/home/HeroSection.tsx
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowRight, Play } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import VideoModal from '../../ui/VideoModal'
 
 const HeroSection = () => {
@@ -12,9 +12,9 @@ const HeroSection = () => {
     navigate('/contact')
   }
 
-  const handleWatchDemo = () => {
-    setIsVideoOpen(true)
-  }
+  // const handleWatchDemo = () => {
+  //   setIsVideoOpen(true)
+  // }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -51,12 +51,12 @@ const HeroSection = () => {
               Get Started
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button 
+            {/* <button 
               onClick={handleWatchDemo}
               className="inline-flex items-center justify-center px-6 py-3 border border-border rounded-lg font-medium hover:bg-secondary transition-all">
               <Play className="mr-2 h-4 w-4" />
               Watch Demo
-            </button>
+            </button> */}
           </div>
           
           {/* Stats */}
